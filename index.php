@@ -33,7 +33,6 @@
 
       </div>
       <div class="logo">
-          นพเกล้าเภสัช
           <div class="clearfix"></div>
       </div>
       
