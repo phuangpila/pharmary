@@ -28,6 +28,9 @@ background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%);
 background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* IE10+ */
 background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%);
 }
+.logout-spn{
+  margin-top: 15px;
+}
 
 </style>
 <body>
