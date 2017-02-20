@@ -1,71 +1,46 @@
     <!DOCTYPE html>
-    <html xmlns="http://www.w3.org/1999/xhtml">
+    <html>
     <head>
           <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>นพเกล้าเภสัช</title>
-    	<!-- BOOTSTRAP STYLES-->
-        <link href="assets/css/bootstrap.css" rel="stylesheet" />
-         <!-- FONTAWESOME STYLES-->
-        <link href="assets/css/font-awesome.css" rel="stylesheet" />
-            <!-- CUSTOM STYLES-->
-        <link href="assets/css/custom.css" rel="stylesheet" />
-         <!-- GOOGLE FONTS-->
-       <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <link href="include/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="include/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="include/assets/css/custom.css" rel="stylesheet" />
+    <link href='include/assets/css/sens.css' rel='stylesheet' type='text/css' />
+    <link href='include/assets/css/m.css' rel='stylesheet' type='text/css' />
     </head>
     <body>
-         <div id="wrapper"> 
-       <div class="navbar navbar-inverse navbar-fixed-top">
-                 <div class="row">
-                    <div class="col-lg-12" >
-                        dsdsd
-                    </div>
+        <div class="main">
+        <div class="container">
+    <center>
+        <div class="middle">
+        <div id="login">
+            <form action="show_detail.php" method="post">
+        <fieldset class="clearfix">
+            <p><span class="fa fa-user"></span><input type="text" Placeholder="Username" required></p>
+            <p><span class="fa fa-lock"></span><input type="password"  Placeholder="Password" required></p> 
+             <div>
+            <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit" value="Sign In"></span>
             </div>
-         </div>        
+
+          </fieldset>
+            <div class="clearfix"></div>
+            </form>
+
+        <div class="clearfix"></div>
+
+      </div>
+      <div class="logo">
+          นพเกล้าเภสัช
+          <div class="clearfix"></div>
+      </div>
+      
+      </div>
+</center>
     </div>
-<br />
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-5 col-md-3">
-            <div class="form-login">
-            <h4>Login</h4>
-            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
-            </br>
-            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
-            </br>
-            <div class="wrapper">
-            <span class="group-btn">     
-                <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-            </span>
-            </div>
-            </div>
-        
-        </div>
-    </div>
+
 </div>
-<br />
-
-    <br>
-        <div class="footer">
-                 <div class="row">
-                    <div class="col-lg-12" >
-                    <center>
-                        &copy; 2017
-                        </center>
-                    </div>
-            </div>
-            </div>
-              
-
-         <!-- /. WRAPPER  -->
-        <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-        <!-- JQUERY SCRIPTS -->
-        <script src="assets/js/jquery-1.10.2.js"></script>
-          <!-- BOOTSTRAP SCRIPTS -->
-        <script src="assets/js/bootstrap.min.js"></script>
-          <!-- CUSTOM SCRIPTS -->
-        <script src="assets/js/custom.js"></script>
-        
-       
     </body>
     </html>

@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-      <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Responsive Admin</title>
-  <!-- BOOTSTRAP STYLES-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
-    <link href="assets/css/custom.css" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-</head>
 <style type="text/css">
 html, body { 
    height: 100%; /* ให้ html และ body สูงเต็มจอภาพไว้ก่อน */
@@ -21,20 +6,31 @@ html, body {
 }
 .wrapper {
    display: block;
-   min-height: 100%; /* real browsers */
+   min-height: 30%; /* real browsers */
    height: auto !important; /* real browsers */
-   height: 100%; /* IE6 bug */
+   height: 30%; /* IE6 bug */
    margin-bottom: -20px; /* กำหนด margin-bottom ให้ติดลบเท่ากับความสูงของ footer */
 }
 .footer {
-   height: 40px; /* ความสูงของ footer */
+   height: 60px; /* ความสูงของ footer */
    display: block;
    text-align: center;
+   background: #0264d6; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%);
 }
 </style>
-<body>
 <div class="wrapper"></div>
-<div class="footer"></div>
-    
-</body>
-</html>
+<div class="footer">
+
+            <div class="row">
+                <div class="col-lg-12" >
+                   &copy; 20177777
+                </div>
+            </div>
+</div>
+
