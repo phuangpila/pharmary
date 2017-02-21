@@ -10,7 +10,7 @@
 <form action="save_type_derug.php" method="post" name="form1">
 		<div class="row">
 			<div>			
-				<p><h3>เพิ่มข้อมูลยา</h3></p>
+				<p><h3>เพิ่มประเภทข้อมูลยา</h3></p>
 					<hr>		
 				<table align="center">
 						<tr>
