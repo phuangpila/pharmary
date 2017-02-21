@@ -1,4 +1,13 @@
-<?php include('include/comtop.php');?>
+<?php 
+include('include/comtop.php');
+include('include/db.php');
+error_reporting(0);
+session_start();
+$sql="SELECT * FROM tb_user WHERE id_auto='".$_SESSION["id"]."' ";
+$query=mysql_query($sql);
+$rec=mysql_fetch_array($query);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +43,7 @@
 								<tr>
 									<td><br><div class="input-group">
   <span class="input-group-addon">ชื่อ-นามสกุล</span>
-  <input type="text" class="form-control" placeholder="ชื่อ-นามสกุล" name="name"/>
+  <input type="text" class="form-control" placeholder="ชื่อ-นามสกุล" name="name" value="<?php echo $rec['name']; ?>" />
 </div></td>
 								</tr>
 								<tr>
