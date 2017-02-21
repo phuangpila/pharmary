@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Responsive Admin</title>
+    <title>นพเกล้าเภสัช</title>
   <!-- BOOTSTRAP STYLES-->
     <link href="include/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -34,6 +34,11 @@ background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%);
 
 </style>
 <body>
+<?php
+if($hide=='Y'){
+
+}else{
+?>
       <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
@@ -68,6 +73,8 @@ background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%);
       <!-- CUSTOM SCRIPTS -->
     <script src="include/assets/js/custom.js"></script>
     
-   
+   <?php
+ }
+   ?>
 </body>
 </html>

@@ -14,7 +14,8 @@ $strSql = "SELECT * FROM tb_user WHERE user_name='".$user_name."' AND pass_word=
 		if ($rec > 0) {
 			$row = mysql_fetch_array($sqlQuery);
 				$_SESSION["name"] =$row["name"]; 
-	
+				$_SESSION["id"] =$row["id_auto"];
+				$_SESSION["username"] =$row["user_name"];
 				echo "<meta http-equiv='refresh' content='0;url=show_detail.php' />";
 		}else{
 			
