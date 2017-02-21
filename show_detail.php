@@ -83,9 +83,9 @@
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="derug.php" >
  <i class="fa fa-comments-o fa-5x"></i>
-                      <h4>Support</h4>
+                      <h4>ข้อมูลยา</h4>
                       </a>
                       </div>
                     
