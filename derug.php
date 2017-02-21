@@ -1,6 +1,5 @@
 <?php
 	include('include/comtop.php');
-	include('include/db.php');
 ?>
 
 <!DOCTYPE html>
