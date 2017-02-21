@@ -77,7 +77,7 @@ session_start();
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="edit_profile.php" >
  <i class="fa fa-key fa-5x"></i>
                       <h4>แก้ไขข้อมูลสส่วนตัว </h4>
                       </a>

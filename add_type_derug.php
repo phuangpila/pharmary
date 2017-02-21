@@ -18,21 +18,11 @@
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div>
 
-                  		<table class="table table-striped">                    
-	                    	<thead>
-	                          <tr>
-	                            <th>ลำดับที่</th>
-	                            <th>ประเภทยา</th>
-	                            <th>หมายเหตุ</th>
-	                          </tr>
-	                        </thead>
-	                        <tbody>
+                  		<table class="table table-striped">
 								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td>Password :</td>
+									<td>dsd</td>
 								</tr>
-	                        </tbody>
                 		</table>           
                   	</div>
             </div>

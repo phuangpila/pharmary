@@ -1,0 +1,42 @@
+<?php include('include/comtop.php');?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="row-fuild">
+		<hr>
+		<div class="col-md-12">
+
+            <div class="panel panel-primary" >
+                <div class="panel-heading" >ข้อมูลส่วนตัว</div>
+                  	<div class="panel-body">
+                  		<div>
+							<button class="btn btn-success" onclick="window.open('../pharmary/insert_type_derug.php','mywindow','location=1,status=1,scrollbars=1,width=800,height=400');">แก้ไข</button>
+							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
+						</div>
+
+                  		<table class="table table-striped">                    
+	                    	<thead>
+	                          <tr>
+	                            <th>ลำดับที่</th>
+	                            <th>ประเภทยา</th>
+	                            <th>หมายเหตุ</th>
+	                          </tr>
+	                        </thead>
+	                        <tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+	                        </tbody>
+                		</table>           
+                  	</div>
+            </div>
+        </div>
+	</div>
+</body>
+</html>
