@@ -8,17 +8,17 @@
 <body>
 		<div class="row">
 			<div>
-				<form action="" method="" name="">
+				<form action="save_type_derug.php" method="post" name="form1">
 					<p><h3>เพิ่มข้อมูลยา</h3></p>
 					<hr>
 					<table align="center">
 							<tr>
 								<td>ประเภทยา : </td>
 								<td>
-									<input type="text" class="form-control" id="" name="">
+									<input type="text" class="form-control" id="type" name="type">
 								</td>							
 								<td align="right" style="width: 15%">
-									<input type="submit" name="" value="บันทึก" class="btn btn-success">
+									<input type="submit" name="ok" value="บันทึก" class="btn btn-success">
 								</td>
 							</tr>
 					</table>

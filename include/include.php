@@ -1,16 +1,8 @@
 <?php
+ include('include/connect.php');
+ global $db,$tables;
+ Class DB{
 
-	function Connect(){
-		$host="127.0.0.1";
-		$sqlusername="root"; 
-		$sqlpassword=""; 
-		$db_name="pharmacy"; 
-
-		mysql_connect("$host", "$sqlusername", "$sqlpassword")or die("cannot connect"); 
-		mysql_select_db("$db_name")or die("cannot select DB");
-		mysql_query("SET NAMES UTF8");
-	}
-	
 	function db_num_rows($rcs){
 		return $this->MYSQL_NUM_ROWS($rcs);
 	}
@@ -21,7 +13,7 @@
 	 * @data		ข้อมูลที่จะ Insert เป็น Array โดย Key คือชื่อ Field, Value คือ ข้อมูลที่จะเพิ่ม
 	 * @outID		ต้องการเลข PK ล่าสุดที่เพิ่ม  ถ้าต้องการใส่ Y
 	 */
-	public function db_insert($tbName, $data, $outID = "")
+	 function db_insert($tbName, $data)
 	{
 		$fieldArray = array();
 		$valueArray = array();
@@ -33,12 +25,7 @@
 		}
 
 		$setSQL = "INSERT INTO ".$tbName." (".implode(', ', $fieldArray).") VALUES (".implode(', ', $valueArray).")";
-		$this->QUERY($setSQL);
-		if($outID != "")
-		{
-			return mysqli_insert_id();
-		}
-		return null;
+		return $this->MYSQL_QUERY($setSQL);
 	}
 
 	/*
@@ -47,7 +34,7 @@
 	 * @data		ข้อมูลที่จะ Update เป็น Array โดย Key คือชื่อ Field, Value คือ ข้อมูลที่จะเพิ่ม
 	 * @cond		เงื่อนไข เป็น Array โดย Key คือชื่อ Field ที่จะ Where, Value คือ ข้อมูลที่จะ Where
 	 */
-	public function db_update($tbName, $data, $cond)
+	 function db_update($tbName, $data, $cond)
 	{
 		$updateData = $this->setArray2String($data);
 		$condition = $this->setArray2String($cond, " AND ");
@@ -61,7 +48,7 @@
 	 * @tbName		ชื่อตารางที่จะ Delete
 	 * @cond		เงื่อนไข เป็น Array โดย Key คือชื่อ Field ที่จะ Where, Value คือ ข้อมูลที่จะ Where
 	 */
-	public function db_delete($tbName, $cond)
+	 function db_delete($tbName, $cond)
 	{
 		$condition = $this->setArray2String($cond, " AND ");
 
@@ -189,5 +176,5 @@
 	function db_close(){
 		return mysql_close();
 	}
-
+}
 ?>
