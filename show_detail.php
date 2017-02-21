@@ -1,3 +1,7 @@
+<?php 
+include('include/db.php');
+session_start();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +29,7 @@
                 <div class="row">
                     <div class="col-lg-12 ">
                         <div class="alert alert-info">
-                             <strong>ยินดีต้อนรับ </strong> อนุพล พวงพิลา.
+                             <strong>ยินดีต้อนรับ </strong> <?php echo $_SESSION["name"]; ?>
                         </div>
                        
                     </div>

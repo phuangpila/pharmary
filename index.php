@@ -17,10 +17,10 @@
     <center>
         <div class="middle">
         <div id="login">
-            <form action="show_detail.php" method="post">
+            <form action="login.php" method="post">
         <fieldset class="clearfix">
-            <p><span class="fa fa-user"></span><input type="text" Placeholder="Username" required></p>
-            <p><span class="fa fa-lock"></span><input type="password"  Placeholder="Password" required></p> 
+            <p><span class="fa fa-user"></span><input type="text" Placeholder="Username" name="user_name" required></p>
+            <p><span class="fa fa-lock"></span><input type="password"  Placeholder="Password" name="pass_word" required></p> 
              <div>
             <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit" value="Sign In"></span>
             </div>
@@ -33,7 +33,7 @@
 
       </div>
       <div class="logo">
-          <div class="clearfix"></div>
+          <div class="clearfix">นพเกล้าเภสัช</div>
       </div>
       
       </div>
