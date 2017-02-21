@@ -18,6 +18,7 @@ session_start();
  <link href='include/assets/css/sens.css' rel='stylesheet' type='text/css' />
 </head>
 <body>
+
      <?php include("include/comtop.php"); ?>
                 <div class="row">
                     <div class="col-lg-12">
