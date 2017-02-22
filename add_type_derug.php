@@ -17,30 +17,33 @@ include('include/db.php');
                 <div class="panel-heading" >ตารางข้อมูลประเภทยา</div>
                   	<div class="panel-body">
                   		<div>
-							<button class="btn btn-success" onclick="popup('../pharmary/insert_type_derug.php','mywindow','800','400');">เพิ่มข้อมูล</button>
+							<button class="btn btn-success" onclick="popup('../pharmary/insert_type_derug.php?in=1','mywindow','800','400');">เพิ่มข้อมูล</button>
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div>
-
-                  		<table class="table table-striped">                    
+<br>
+                  		<table class="table table-striped table-bordered table-hover" >                    
 	                    	<thead>
 	                          <tr>
-	                            <th>ลำดับที่</th>
+	                            <th width="10%">ลำดับที่</th>
 	                            <th>ประเภทยา</th>
-	                            <th>หมายเหตุ</th>
+	                            <th width="10%">Action</th>
 	                          </tr>
 	                        </thead>
 	                        <tbody>
 	                        <?php 
+	                        $i=1;
 								$sql="SELECT * FROM tb_typepro";
 								$query=mysql_query($sql);
 								while ($res=mysql_fetch_array($query)) {
 								 ?>
 	                        <tr>
+								<td><?php echo $i; ?></td>
 								<td><?php echo $res['type_name']; ?></td>
-								<td></td>
-								<td></td>
+								<td><button class="btn btn-warning" onclick="popup('../pharmary/insert_type_derug.php?up=1&idup=<?php echo $res['type_id']; ?>','mywindow','800','400');">แก้ไข</button>
+									<button class="btn btn-danger" onclick="window.location.href='insert_type_derug.php?del=<?php echo $res['type_id']; ?>'">ลบ</button>
+								</td>
 							</tr>
-							<?php } ?>
+							<?php $i++; } ?>
 							</tbody>
                 		</table>           
                   	</div>
