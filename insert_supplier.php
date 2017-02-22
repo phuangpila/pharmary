@@ -42,7 +42,7 @@ if($_GET['in']==1){
 <form action="insert_supplier.php" method="post" name="form1">
 		<div class="row">
 			<div>			
-				<p><h3>เพิ่มข้อมูลบริษัท</h3></p>
+				<h3>&nbsp;&nbsp;&nbsp; เพิ่มข้อมูลบริษัท</h3>
 					<hr>		
 				<table align="center">
 						<tr>
