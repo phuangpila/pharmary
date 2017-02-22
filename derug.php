@@ -44,19 +44,25 @@
 	                        	$i=1;
 	                        	$query = mysql_query("SELECT * FROM tb_product");
 	                      		while ($res = mysql_fetch_array($query)) {
+
+	                      			$query_s =mysql_query("SELECT * FROM tb_typepro WHERE type_id = '".$res['type_id']."'");
+	                      			$rs_show = mysql_fetch_array($query_s);
+
+	                      				$query_ss =mysql_query("SELECT * FROM tb_supplier WHERE supp_id = '".$res['supp_id']."'");
+	                      			$rs_s = mysql_fetch_array($query_ss);
 	                         ?>
 	                        <tbody>
 								<tr>
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['pro_name']; ?></td>
-									<td><?php echo $res['type_id']; ?></td>
+									<td><?php echo $rs_show['type_name']; ?></td>
 									<td><?php echo $res['pro_description']; ?></td>
 									<td><?php echo $res['pro_size']; ?></td>
 									<td><?php echo $res['pro_day']; ?></td>
 									<td><?php echo $res['date_expiretion']; ?></td>
 									<td><?php echo $res['pro_cost']; ?></td>
 									<td><?php echo $res['pro_price']; ?></td>
-									<td><?php echo $res['supp_id']; ?></td>
+									<td><?php echo $rs_s['supp_name']; ?></td>
 									<td><?php echo $res['pro_limit']; ?></td>
 									<td><?php echo $res['pro_unit']; ?></td>
 									<td colspan="2">
