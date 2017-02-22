@@ -13,6 +13,20 @@ if($_POST['insert']=='0'){
 insert("tb_supplier",$data);
 echo "<script type='text/javascript'>window.opener.location.reload('supplier.php');window.close();</script>";
 
+}else if($_POST['update']==1){
+	$data = array(
+	"supp_name"=>$_POST["supp_name"],
+	"supp_email"=>$_POST["supp_email"],
+	"supp_tel"=>$_POST["supp_tel"],
+	"supp_fax"=>$_POST["supp_fax"],
+	"supp_add"=>$_POST["supp_add"],
+);
+update("tb_supplier",$data,"supp_id = '".$_POST["id"]."' ");
+echo "<script type='text/javascript'>window.opener.location.reload('supplier.php');window.close();</script>";
+
+}else if($_GET['del']){
+	delete('tb_supplier','supp_id="'.$_GET['del'].'" ');
+	echo "<script type='text/javascript'>alert('ลบข้อมูลเรียบร้อยแล้ว');window.location.href ='add_type_derug.php';</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -77,7 +91,8 @@ if($_GET['in']==1){
 				?>
 						<tr>
 							<td>ชื่อบริษัทยา  <input type="text" name="supp_name" id="supp_name" value="<?php echo $res['supp_name']; ?>" class="form-control">
-							 <input type="hidden" name="insert" id="" value="<?php echo $_GET['idup']; ?>" class="form-control">
+							 <input type="hidden" name="update" id="" value="1" class="form-control">
+							 <input type="hidden" name="id" id="" value="<?php echo $_GET['idup']; ?>" class="form-control">
 							</td>
 							<td>&nbsp;&nbsp;</td>
 							<td>อีเมล์ <input type="text" name="supp_email" id="supp_email" value="<?php echo $res['supp_email']; ?>" class="form-control"></td>
