@@ -1,5 +1,6 @@
 <?php
 	include('include/comtop.php');
+	include('include/db.php');
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
                 <div class="panel-heading" >ตารางข้อมูลบริษัท</div>
                   	<div class="panel-body">
                   		<div>
-							<button class="btn btn-success" onclick="window.open('../pharmary/insert_supplier.php','mywindow','location=1,status=1,scrollbars=1,width=800,height=500');">เพิ่มข้อมูล</button>
+							<button class="btn btn-success" onclick="window.open('../pharmary/insert_supplier.php?in=1','mywindow','location=1,status=1,scrollbars=1,width=800,height=500');">เพิ่มข้อมูล</button>
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div>
 
@@ -30,19 +31,28 @@
 								<th>เบอร์โทร</th>
 								<th>แฟกซ์</th>
 								<th>ที่อยู่</th>
+								<th>Ations</th>
 	                          </tr>
 	                        </thead>
+	                        <?php 
+	                        	$i=1;
+	                        	$query_s = mysql_query("SELECT * FROM tb_supplier");
+	                        	while ($res = mysql_fetch_array($query_s)) {
+	                         ?>
 	                        <tbody>
 								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td><?php echo $i++; ?></td>
+									<td><?php echo $res['supp_name']; ?></td>
+									<td><?php echo $res['supp_email']; ?></td>
+									<td><?php echo $res['supp_tel']; ?></td>
+									<td><?php echo $res['supp_fax']; ?></td>
+									<td><?php echo $res['supp_add']; ?></td>
+									<td colspan="2" width="20"><button class="btn btn-warning" onclick="popup('../pharmary/insert_supplier.php?up=1&idup=<?php echo $res['supp_id']; ?>','mywindow','800','400');">แก้ไข</button>
+									<button class="btn btn-danger" onclick="window.location.href='insert_supplier.php?del=<?php echo $res['supp_id']; ?>'">ลบ</button></td>
+									
 								</tr>
 	                        </tbody>
+	                        <?php } ?>
                 		</table>           
                   	</div>
             </div>
