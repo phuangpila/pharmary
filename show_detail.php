@@ -163,11 +163,6 @@ session_start();
                   </div> 
               </div>   
         </div>
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> origin/master
           
 <?php include("include/combuttom.php"); ?>
      <!-- /. WRAPPER  -->
