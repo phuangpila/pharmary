@@ -40,17 +40,17 @@ session_start();
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="add_type_derug.php" >
- <i class="fa fa-cubes fa-5x"></i>
-                      <h4>จัดการข้อมูลประเภทยา</h4>
+ <i class="fa fa-pencil fa-5x"></i>
+                      <h4>ข้อมูลประเภทยา</h4>
                       </a>
                       </div>
                   </div> 
                  
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
- <i class="fa fa-arrow-circle-up fa-5x"></i>
-                      <h4>ข้อมูลการขาย</h4>
+                           <a href="derug.php" >
+ <i class="fa fa-flask fa-5x"></i>
+                      <h4>ข้อมูลยา</h4>
                       </a>
                       </div>
                      
@@ -70,8 +70,8 @@ session_start();
                       <div class="div-square">
                            <a href="blank.html" >
 
- <i class="fa fa-key fa-5x"></i>
-                      <h4>ข้อมูลพนักงาน</h4>
+ <i class="fa fa-arrow-circle-up fa-5x"></i>
+                      <h4>ข้อมูลการขาย</h4>
                       </a>
                       </div>
                      
@@ -81,7 +81,7 @@ session_start();
                       <div class="div-square">
                            <a href="edit_profile.php" >
 
- <i class="fa fa-users fa fa-5x"></i>
+ <i class="fa fa-user fa fa-5x"></i>
 
                       <h4>แก้ไขข้อมูลสส่วนตัว </h4>
                       </a>
@@ -91,9 +91,9 @@ session_start();
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="derug.php" >
- <i class="fa fa-comments-o fa-5x"></i>
-                      <h4>ข้อมูลยา</h4>
+                           <a href="supplier.php" >
+ <i class="fa fa-users fa-5x"></i>
+                      <h4>ข้อมูลบริษัท</h4>
                       </a>
                       </div>
                     
