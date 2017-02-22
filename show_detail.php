@@ -176,9 +176,4 @@ session_start();
     
    
 </body>
-
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> origin/master
