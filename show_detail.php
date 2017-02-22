@@ -69,7 +69,11 @@ session_start();
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="blank.html" >
+<<<<<<< HEAD
  <i class="fa fa-users fa-5x"></i>
+=======
+ <i class="fa fa-key fa-5x"></i>
+>>>>>>> origin/master
                       <h4>ข้อมูลพนักงาน</h4>
                       </a>
                       </div>
@@ -79,7 +83,11 @@ session_start();
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="edit_profile.php" >
+<<<<<<< HEAD
  <i class="fa fa-key fa-5x"></i>
+=======
+ <i class="fa fa-users fa fa-5x"></i>
+>>>>>>> origin/master
                       <h4>แก้ไขข้อมูลสส่วนตัว </h4>
                       </a>
                       </div>
@@ -160,7 +168,11 @@ session_start();
                   </div> 
               </div>   
         </div>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
           
 <?php include("include/combuttom.php"); ?>
      <!-- /. WRAPPER  -->
@@ -175,4 +187,8 @@ session_start();
    
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> origin/master
