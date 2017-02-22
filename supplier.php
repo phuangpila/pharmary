@@ -48,7 +48,9 @@
 									<td><?php echo $res['supp_fax']; ?></td>
 									<td><?php echo $res['supp_add']; ?></td>
 									<td colspan="2" width="20"><button class="btn btn-warning" onclick="popup('../pharmary/insert_supplier.php?up=1&idup=<?php echo $res['supp_id']; ?>','mywindow','800','400');">แก้ไข</button>
-									<button class="btn btn-danger" onclick="window.location.href='insert_supplier.php?del=<?php echo $res['supp_id']; ?>'">ลบ</button></td>
+									<a href="insert_supplier.php?del=<?php echo $res['supp_id']; ?>"
+									 role="button" class="btn btn-danger" onclick="return confirm('ยืนยันการลบ');">ลบ</a>
+									</td>
 									
 								</tr>
 	                        </tbody>

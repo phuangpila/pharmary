@@ -26,7 +26,7 @@ echo "<script type='text/javascript'>window.opener.location.reload('supplier.php
 
 }else if($_GET['del']){
 	delete('tb_supplier','supp_id="'.$_GET['del'].'" ');
-	echo "<script type='text/javascript'>alert('ลบข้อมูลเรียบร้อยแล้ว');window.location.href ='add_type_derug.php';</script>";
+	echo "<script type='text/javascript'>alert('ลบข้อมูลเรียบร้อยแล้ว');window.location.href ='supplier.php';</script>";
 }
 ?>
 <!DOCTYPE html>
