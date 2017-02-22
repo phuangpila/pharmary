@@ -113,5 +113,10 @@ else { die("SQL Error: ".$sql."".mysql_error()); return false; }
     if (window.focus) {  
         newWindow.focus();  
     }  
-}  
+} 
+function confirmDelete(delUrl) {
+  if (confirm("คุณต้องการลบข้อมูลหรือไม่")) {
+   document.location = delUrl;
+  }
+}
 </script>
