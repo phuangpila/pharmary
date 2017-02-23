@@ -18,7 +18,7 @@
                 <div class="panel-heading" >ตารางข้อมูลยา</div>
                   	<div class="panel-body">
                   		<div>
-							<button class="btn btn-success" onclick="window.open('../pharmary/insert_derug.php?in=1','mywindow','location=1,status=1,scrollbars=1,width=800,height=700');">เพิ่มข้อมูล</button>
+							<button class="btn btn-success" onclick="popup('../pharmary/insert_derug.php?in=1','mywindow','800','400');">เพิ่มข้อมูล</button>
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div>
 
