@@ -12,7 +12,14 @@
     <link href="include/assets/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='include/assets/css/sens.css' rel='stylesheet' type='text/css' />
+
+   <link rel="stylesheet" type="text/css" href="include/dataTable/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="include/dataTable/dataTables.jqueryui.css">
+    <script type="text/javascript" language="javascript" src="include/dataTable/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" language="javascript" src="include/dataTable/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="include/dataTable/dataTables.jqueryui.js"></script>
 </head>
+
 <style type="text/css">
 html, body { 
    height: 100%; /* ให้ html และ body สูงเต็มจอภาพไว้ก่อน */
@@ -33,6 +40,7 @@ background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%);
 }
 
 </style>
+
 <body>
 <?php
 if($hide=='Y'){
@@ -63,18 +71,13 @@ if($hide=='Y'){
         </div>
         
  <br>
-      
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="include/assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="include/assets/js/bootstrap.min.js"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="include/assets/js/custom.js"></script>
+
     
    <?php
  }
-   ?>
+   ?>    
+   <!-- <script src="include/assets/js/jquery-1.10.2.js"></script>
+    <script src="include/assets/js/bootstrap.min.js"></script>
+    <script src="include/assets/js/custom.js"></script> -->
 </body>
 </html>
