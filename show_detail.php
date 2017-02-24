@@ -103,7 +103,7 @@ session_start();
                       <div class="div-square">
                            <a href="#" >
  <i class="fa fa-clipboard fa-5x"></i>
-                      <h4>รายงาน</h4>
+                      <h4>รายงานการสั่งยา</h4>
                       </a>
                       </div>
                      
@@ -113,7 +113,7 @@ session_start();
                       <div class="div-square">
                            <a href="blank.html" >
  <i class="fa fa-clipboard fa-5x"></i>
-                      <h4>Live Talk</h4>
+                      <h4>รายงานการขายยา</h4>
                       </a>
                       </div>
                      
@@ -121,9 +121,9 @@ session_start();
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="report_end_date.php" >
  <i class="fa fa-clipboard fa-5x"></i>
-                      <h4>Notifications </h4>
+                      <h4>รายงานยาหมดอายุ </h4>
                       </a>
                       </div>
                      

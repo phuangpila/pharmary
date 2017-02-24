@@ -58,7 +58,7 @@ if($_GET['in']==1){
 <form action="insert_store.php" method="post" name="form1">
 		<div class="row">
 			<div>			
-				<h3>&nbsp;&nbsp;&nbsp; เพิ่มข้อมูร้าน</h3>
+				<h3>&nbsp;&nbsp;&nbsp; เพิ่มข้อมูลร้าน</h3>
 					<hr>		
 				<table align="center">
 						<tr>
