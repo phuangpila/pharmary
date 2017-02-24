@@ -1,5 +1,7 @@
 <?php 
+
 include('include/db.php');
+
 session_start();
  ?>
 <!DOCTYPE html>
@@ -8,25 +10,10 @@ session_start();
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>นพเกล้าเภสัช</title>
-	<!-- BOOTSTRAP STYLES-->
-    <link href="include/assets/css/bootstrap.css" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
-    <link href="include/assets/css/font-awesome.css" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
-    <link href="include/assets/css/custom.css" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
- <link href='include/assets/css/sens.css' rel='stylesheet' type='text/css' />
 </head>
 <body>
-
-     <?php include("include/comtop.php"); ?>
-                <div class="row">
-                    <div class="col-lg-12">
-                     <h2>&nbsp;นพเกล้าเภสัช</h2>   
-                    </div>
-                </div>              
-                 <!-- /. ROW  -->
-                  <hr />
+        <?php include("include/comtop.php");  ?>
+         <h2>&nbsp;นพเกล้าเภสัช</h2>  <hr>
                 <div class="row">
                     <div class="col-lg-12 ">
                         <div class="alert alert-info">
@@ -104,9 +91,9 @@ session_start();
                  
                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="#" >
- <i class="fa fa-clipboard fa-5x"></i>
-                      <h4>ข้อมูล</h4>
+                           <a href="store.php" >
+ <i class="fa fa-bank fa-5x"></i>
+                      <h4>ข้อมูลร้าน</h4>
                       </a>
                       </div>
                      
@@ -114,9 +101,9 @@ session_start();
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="store.php" >
+                           <a href="#" >
  <i class="fa fa-clipboard fa-5x"></i>
-                      <h4>ข้อมูลร้าน</h4>
+                      <h4>รายงาน</h4>
                       </a>
                       </div>
                      

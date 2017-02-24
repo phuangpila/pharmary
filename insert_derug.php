@@ -176,11 +176,12 @@ if($_GET['in']==1){
 							ประเภทยา 
 								<select name="type_id" id="type_id" class="form-control">
 								<?php 
-									$query_ty = mysql_query("SELECT * FROM tb_typepro");
+
+									$query_ty = mysql_query("SELECT type_id,type_name FROM tb_typepro");
 									while ($res = mysql_fetch_array($query_ty)) {
 								 ?>
 									<option value="<?php echo $res['type_id'];?>"
-									<?php if ($res['type_id']== $_POST['type_id'] ) {echo "selected"; } ?>><?php echo $res['type_name'];?>
+									<?php if ($res['type_id']== $res_show['type_id'] ) {echo "selected"; } ?>><?php echo $res['type_name'];?>
 									</option>
 								<?php } ?>
 								</select>
@@ -225,7 +226,8 @@ if($_GET['in']==1){
 									$query_ty = mysql_query("SELECT * FROM tb_supplier");
 									while ($res_s = mysql_fetch_array($query_ty)) {
 								 ?>
-									<option value="<?php echo $res_s['supp_id']; ?>"><?php echo $res_s['supp_name']; ?></option>
+									<option value="<?php echo $res_s['supp_id']; ?>"<?php 
+									if ($res_s['supp_id'] == $res_show['supp_id']) { echo "selected";}?>><?php echo $res_s['supp_name']; ?></option>
 								<?php } ?>
 								</select>
 							</td>
