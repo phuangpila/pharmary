@@ -120,3 +120,8 @@ function confirmDelete(delUrl) {
   }
 }
 </script>
+<style type="text/css">
+    input[type="number"] {
+   width:50px;
+}
+</style>

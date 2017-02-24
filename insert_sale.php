@@ -4,14 +4,28 @@ error_reporting(0);
 	include('include/comtop.php');
 	include('include/db.php');
 
-	//$chkdel = $_POST["chkdel"];
+if($_POST['add']=='1'){
+	$chk = $_POST["chk"];
+	$u=$_POST["unit"];
+	$p=$_POST["price"];
+	for ($i=0; $i <count($chk); $i++) { 
+			$pro=$chk[$i];
+			$u1=$u[$i];
+			$p1=$p[$i];
 
-	/*for ($i=0; $i <count($chkdel); $i++) { 
-		
-		$sql="DELETE FROM tb_student WHERE Id_student = ".$chkdel[$i]." ";
-		mysql_query($sql);
-	}*/
-	//<input type="checkbox" name="chkdel[]" value="$rs["Id_student"];"  />
+$run_id='S';
+$ran=rand(10,10000);
+			$data = array(
+"pro_id"=>$pro,
+"sale_id"=>$run_id.$pro.$ran,
+"sale_unit"=>$u1,
+"sale_price"=>$p1,
+"sale_date"=>date("Y-m-d"),
+);
+insert("tb_sale",$data);
+	}
+	echo "<script type='text/javascript'>window.opener.location.reload('add_sale.php');window.close();</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +53,9 @@ $('#example').dataTable( {
 		<div class="col-md-12">
 
             <div class="panel panel-primary" >
-                <div class="panel-heading" >ข้อูลการขาย</div>
+                <div class="panel-heading" >การสั่งซื้อ</div>
                   	<div class="panel-body">
-               
+   <form action="insert_sale.php" method="post" name="form1">         
 	<table cellpadding="0" cellspacing="0" border="0"   id="example">
   <thead>
   
@@ -49,31 +63,65 @@ $('#example').dataTable( {
     <td ><b>ลำดับ</b></td>
     <td><b>ชื่อยา</b></td>
     <td><b>ราคา</b></td>
-    <td ><b>จำนวน</b></td>
-   
+    <td ><b>จำนวนที่เหลือ</b></td>
+   <td ><b>จำนวนที่สั่ง</b></td>
   </tr>
   </thead>
   <tbody>
+  <?php
+$sql="SELECT * FROM tb_product ";
+$q=mysql_query($sql);
+while ($rec=mysql_fetch_array($q)) {
+	 $y=substr($rec['date_expiretion'],0,4);
+	 $m=substr($rec['date_expiretion'],5,2);
+	$d=substr($rec['date_expiretion'],8,2);
+	$gy=date("Y");
+	$gm=date("m");
+	$gd=date("d");
+		if(intval($y)<=intval($gy)){
+			if(intval($m)<=intval($gm)){
+				if(intval($d)<=intval($gd)){
+  ?>
   <tr >
-    <td align="center"><input type="checkbox" name="m"></td>
-    <td align="center">mmm</td>
-    <td align="center">ออออ</td>
-    <td align="center">รรรรร</td>
+    <td align="center"><input type="checkbox" name="chk[]" value="<?php echo $rec['pro_id']; ?>"  />
+<input type="hidden" name="add" value="1">
+    </td>
+    <td align="center"><?php echo $rec['pro_name']; ?></td>
+    <td align="center"><?php echo $rec['pro_price']; ?>
+    <input type="hidden" name="price[]" value="<?php echo $rec['pro_price']; ?>">
+    </td>
+    <td align="center"><?php echo $rec['pro_unit']; ?></td>
+    <td align="center" ><input type="number" name="unit[]" min="0" max="<?php echo $rec['pro_unit']; ?>" size="2"></td>
   </tr>
-  
+  <?php
+			}
+		}
+  	}
+  }
+  ?>
+  </tbody>
 <tfoot>
 	<tr >
     <td align="center"></td>
     <td align="center"></td>
     <td align="center"></td>
     <td align="center">20</td>
+    <td align="center"></td>
   </tr>
 </tfoot>
 </table>
+<br>
+<div align="center">
+				<div>
+					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
+					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
+				</div>
+			</div>
+</form>
 </div>
             </div>
         </div>
 	</div>
-</body>
+
 </body>
 </html>
