@@ -34,7 +34,7 @@ $('#example').dataTable( {
                 <div class="panel-heading" >ข้อูลการขาย</div>
                   	<div class="panel-body">
                   		<div>
-							<button class="btn btn-success" onclick="popup('../pharmary/insert_sale.php ?>','mywindow','800','400');">เพิ่มข้อมูล</button>
+							<button class="btn btn-success" onclick="popup('../pharmary/insert_sale.php','mywindow','800','400');">เพิ่มข้อมูล</button>
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div>
 
