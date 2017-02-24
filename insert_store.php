@@ -33,6 +33,18 @@ echo "<script type='text/javascript'>window.opener.location.reload('store.php');
 	echo "<script type='text/javascript'>alert('ลบข้อมูลเรียบร้อยแล้ว');window.location.href ='store.php';</script>";
 }
 ?>
+<script language="JavaScript">
+
+		function chkNumber(ele){
+
+			var vchar = String.fromCharCode(event.keyCode);
+
+			if ((vchar<'0' || vchar>'9') && (vchar != '-')) return false;
+
+			ele.onKeyPress=vchar;
+		}
+
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,14 +62,14 @@ if($_GET['in']==1){
 					<hr>		
 				<table align="center">
 						<tr>
-							<td>ชื่อร้านค้า  <input type="text" name="store_name" id="store_name" value="" class="form-control"></td>
+							<td>ชื่อร้านค้า  <input type="text" name="store_name" id="store_name" value="" class="form-control" required=""></td>
 							 <input type="hidden" name="insert" id="" value="0" class="form-control">
 							</td>
 							<td>&nbsp;&nbsp;</td>
-							<td>รหัสที่จดทะเบียน <input type="text" name="store_code" id="store_code" value="" class="form-control"></td>
+							<td>รหัสที่จดทะเบียน <input type="text" name="store_code" id="store_code" value="" class="form-control" required=""></td>
 						</tr>
 						<tr>
-							<td>แฟกซ์ <input type="text" name="store_fax" id="store_fax" value="" class="form-control"></td>
+							<td>แฟกซ์ <input type="text" name="store_fax" id="store_fax" value="" class="form-control" placeholder="xx-xxx-xxxx" OnKeyPress="return chkNumber(this)"></td>
 							<td>&nbsp;&nbsp;</td>
 							<td>อีเมล์ <input type="text" name="store_email" id="store_email" value="" class="form-control"></td>
 						</tr>
@@ -66,7 +78,7 @@ if($_GET['in']==1){
 							<td>&nbsp;&nbsp;</td>
 						</tr>
 						<tr>
-							<td>เบอร์โทร <input type="text" name="store_tel" id="store_tel" value="" class="form-control"></td>
+							<td>เบอร์โทร <input type="text" name="store_tel" id="store_tel" value="" class="form-control" placeholder="xx-xxxx-xxxx" OnKeyPress="return chkNumber(this)"></td>
 						</tr>
 						<tr>
 							<td>&nbsp;&nbsp;</td>
@@ -91,7 +103,7 @@ if($_GET['in']==1){
 <form action="insert_store.php" method="post" name="form1">
 		<div class="row">
 			<div>			
-				<h3>&nbsp;&nbsp;&nbsp; เพิ่มข้อมูร้าน</h3>
+				<h3>&nbsp;&nbsp;&nbsp; แก้ไขข้อมูลร้าน</h3>
 					<hr>		
 				<table align="center">
 				<?php
@@ -108,7 +120,7 @@ if($_GET['in']==1){
 							<td>รหัสที่จดทะเบียน <input type="text" name="store_code" id="store_code" value="<?php echo $res['store_code']; ?>" class="form-control"></td>
 						</tr>
 						<tr>
-							<td>แฟกซ์ <input type="text" name="store_fax" id="store_fax" value="<?php echo $res['store_code']; ?>" class="form-control"></td>
+							<td>แฟกซ์ <input type="text" name="store_fax" id="store_fax" value="<?php echo $res['store_code']; ?>" class="form-control" OnKeyPress="return chkNumber(this)"></td>
 							<td>&nbsp;&nbsp;</td>
 							<td>อีเมล์ <input type="text" name="store_email" id="store_email" value="<?php echo $res['store_email']; ?>" class="form-control"></td>
 						</tr>
@@ -117,7 +129,7 @@ if($_GET['in']==1){
 							<td>&nbsp;&nbsp;</td>
 						</tr>
 						<tr>
-							<td>เบอร์โทร <input type="text" name="store_tel" id="store_tel" value="<?php echo $res['store_tel']; ?>" class="form-control"></td>
+							<td>เบอร์โทร <input type="text" name="store_tel" id="store_tel" value="<?php echo $res['store_tel']; ?>" class="form-control" OnKeyPress="return chkNumber(this)"></td>
 						</tr>
 						<tr>
 							<td>&nbsp;&nbsp;</td>

@@ -28,14 +28,12 @@
 	                            <th>ลำดับที่</th>
 	                            <th>ชื่อยา</th>
 								<th>ประเภทยา</th>
-								<th>สรรพคุณยา</th>
 								<th>ขนาดยา</th>
 								<th>วันผลิต</th>
 								<th>วันหมดอายุ</th>
 								<th>ราคาต้นทุน</th>
 								<th>ราคาที่ขาย</th>
 								<th>บริษัทยา</th>
-								<th>วิธีการใช้</th>
 								<th>จำนวนยา</th>
 								<th>Action</th>
 	                          </tr>
@@ -56,14 +54,12 @@
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['pro_name']; ?></td>
 									<td><?php echo $rs_show['type_name']; ?></td>
-									<td><?php echo $res['pro_description']; ?></td>
 									<td><?php echo $res['pro_size']; ?></td>
 									<td><?php echo $res['pro_day']; ?></td>
 									<td><?php echo $res['date_expiretion']; ?></td>
 									<td><?php echo $res['pro_cost']; ?></td>
 									<td><?php echo $res['pro_price']; ?></td>
 									<td><?php echo $rs_s['supp_name']; ?></td>
-									<td><?php echo $res['pro_limit']; ?></td>
 									<td><?php echo $res['pro_unit']; ?></td>
 									<td colspan="2">
 										<button class="btn btn-warning" onclick="popup('../pharmary/insert_derug.php?up=1&idup=<?php echo $res['pro_id']; ?>','mywindow','800','400');">แก้ไข</button>

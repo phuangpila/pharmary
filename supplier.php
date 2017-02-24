@@ -25,7 +25,7 @@
                   		<table class="table table-striped">                    
 	                    	<thead>
 	                          <tr>
-	                            <th>ลำดับที่</th>
+	                            <th width="1">ลำดับที่</th>
 	                            <th>ชื่อบริษัทยา</th>
 								<th>อีเมล์</th>
 								<th>เบอร์โทร</th>

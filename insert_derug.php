@@ -43,6 +43,18 @@ echo "<script type='text/javascript'>window.opener.location.reload('derug.php');
 	echo "<script type='text/javascript'>alert('ลบข้อมูลเรียบร้อยแล้ว');window.location.href ='derug.php';</script>";
 }
 ?>
+<script language="JavaScript">
+
+		function chkNumber(ele){
+
+			var vchar = String.fromCharCode(event.keyCode);
+
+			if ((vchar<'0' || vchar>'9') && (vchar != '.')) return false;
+
+			ele.onKeyPress=vchar;
+		}
+
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +73,7 @@ if($_GET['in']==1){
 				<table align="center">
 						<tr>
 							<td>ชื่อยา  
-							<input type="text" name="pro_name" id="pro_name" value="" class="form-control"><input type="hidden" name="insert" id="" value="0" class="form-control">
+							<input type="text" name="pro_name" id="pro_name" value="" class="form-control" required=""><input type="hidden" name="insert" id="" value="0" class="form-control">
 							</td>
 							
 							<td>&nbsp;&nbsp;</td>
@@ -82,7 +94,7 @@ if($_GET['in']==1){
 							<td>&nbsp;&nbsp;</td>
 						</tr>
 						<tr>
-							<td>จำนวนยา  <input type="text" name="pro_unit" id="pro_unit" value="" class="form-control"></td>
+							<td>จำนวนยา  <input type="text" name="pro_unit" id="pro_unit" value="" class="form-control" OnKeyPress="return chkNumber(this)"></td>
 							<td>&nbsp;&nbsp;</td>
 							<td>ขนาดยา <input type="text" name="pro_size" id="pro_size" value="" class="form-control"></td>
 						</tr>
@@ -100,9 +112,9 @@ if($_GET['in']==1){
 							<td>&nbsp;&nbsp;</td>
 						</tr>
 						<tr>
-							<td>ราคาต้นทุน <input type="text" name="pro_cost" id="pro_cost" value="" class="form-control"></td>
+							<td>ราคาต้นทุน (บาท)<input type="text" name="pro_cost" id="pro_cost" value="" class="form-control" OnKeyPress="return chkNumber(this)"></td>
 							<td>&nbsp;&nbsp;</td>
-							<td>ราคาที่ขาย <input type="text" name="pro_price" id="pro_price" value="" class="form-control"></td>
+							<td>ราคาที่ขาย (บาท)<input type="text" name="pro_price" id="pro_price" value="" class="form-control" OnKeyPress="return chkNumber(this)"></td>
 						</tr>
 						<tr>
 							<td>&nbsp;&nbsp;</td>
@@ -128,9 +140,8 @@ if($_GET['in']==1){
 							<td>&nbsp;&nbsp;</td>
 						</tr>
 						<tr>
-						<td colspan="4">วิธีการใช้ยา <input type="text" name="pro_limit" id="pro_limit" value="" class="form-control"></td><br>
+						<td colspan="4">วิธีการใช้ยา <textarea name="pro_limit" id="pro_limit" cols="30" rows="10" class="form-control"></textarea></td><br>
 						</tr>
-
 				</table>	
 			</div><br>
 			<div align="center">
@@ -180,7 +191,7 @@ if($_GET['in']==1){
 							<td>&nbsp;&nbsp;</td>
 						</tr>
 						<tr>
-							<td>จำนวนยา  <input type="text" name="pro_unit" id="pro_unit" value="<?php echo $res_show['pro_unit']; ?>" class="form-control"></td>
+							<td>จำนวนยา  <input type="text" name="pro_unit" id="pro_unit" value="<?php echo $res_show['pro_unit']; ?>" class="form-control"  OnKeyPress="return chkNumber(this)"></td>
 							<td>&nbsp;&nbsp;</td>
 							<td>ขนาดยา <input type="text" name="pro_size" id="pro_size" value="<?php echo $res_show['pro_size']; ?>" class="form-control"></td>
 						</tr>

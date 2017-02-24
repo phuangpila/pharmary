@@ -29,6 +29,18 @@ echo "<script type='text/javascript'>window.opener.location.reload('supplier.php
 	echo "<script type='text/javascript'>alert('ลบข้อมูลเรียบร้อยแล้ว');window.location.href ='supplier.php';</script>";
 }
 ?>
+<script language="JavaScript">
+
+		function chkNumber(ele){
+
+			var vchar = String.fromCharCode(event.keyCode);
+
+			if ((vchar<'0' || vchar>'9') && (vchar != '-')) return false;
+
+			ele.onKeyPress=vchar;
+		}
+
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +58,7 @@ if($_GET['in']==1){
 					<hr>		
 				<table align="center">
 						<tr>
-							<td>ชื่อบริษัทยา  <input type="text" name="supp_name" id="supp_name" value="" class="form-control">
+							<td>ชื่อบริษัทยา  <input type="text" name="supp_name" id="supp_name" value="" class="form-control" required="">
 							 <input type="hidden" name="insert" id="" value="0" class="form-control">
 							</td>
 							<td>&nbsp;&nbsp;</td>
@@ -57,9 +69,9 @@ if($_GET['in']==1){
 							<td>&nbsp;&nbsp;</td>
 						</tr>
 						<tr>
-							<td>เบอร์โทร <input type="text" name="supp_tel" id="supp_tel" value="" class="form-control"></td>
+							<td>เบอร์โทร <input type="text" name="supp_tel" id="supp_tel" value="" class="form-control" placeholder="xx-xxxx-xxxx" OnKeyPress="return chkNumber(this)"></td>
 							<td>&nbsp;&nbsp;</td>
-							<td>แฟกซ์ <input type="text" name="supp_fax" id="supp_fax" value="" class="form-control"></td>
+							<td>แฟกซ์ <input type="text" name="supp_fax" id="supp_fax" value="" class="form-control" placeholder="xx-xxx-xxxx" OnKeyPress="return chkNumber(this)"></td>
 						</tr>
 						<tr>
 						<td colspan="4">ที่อยู่ <textarea name="supp_add" id="supp_add" cols="30" rows="10" class="form-control"></textarea></td><br>
@@ -81,7 +93,7 @@ if($_GET['in']==1){
 <form action="insert_supplier.php" method="post" name="form1">
 		<div class="row">
 			<div>			
-				<h3>&nbsp;&nbsp;&nbsp;แก้ไขประเภทข้อมูลยา</h3>
+				<h3>&nbsp;&nbsp;&nbsp;แก้ไขข้อมูลบริษัท</h3>
 					<hr>		
 				<table align="center">
 				<?php
@@ -102,9 +114,9 @@ if($_GET['in']==1){
 							<td>&nbsp;&nbsp;</td>
 						</tr>
 						<tr>
-							<td>เบอร์โทร <input type="text" name="supp_tel" id="supp_tel" value="<?php echo $res['supp_tel']; ?>" class="form-control"></td>
+							<td>เบอร์โทร <input type="text" name="supp_tel" id="supp_tel" value="<?php echo $res['supp_tel']; ?>" class="form-control" OnKeyPress="return chkNumber(this)"></td>
 							<td>&nbsp;&nbsp;</td>
-							<td>แฟกซ์ <input type="text" name="supp_fax" id="supp_fax" value="<?php echo $res['supp_fax']; ?>" class="form-control"></td>
+							<td>แฟกซ์ <input type="text" name="supp_fax" id="supp_fax" value="<?php echo $res['supp_fax']; ?>" class="form-control" OnKeyPress="return chkNumber(this)"></td>
 						</tr>
 						<tr>
 						<td colspan="4">ที่อยู่ <textarea name="supp_add" id="supp_add" cols="30" rows="10" class="form-control"><?php echo $res['supp_add']; ?></textarea></td>

@@ -41,7 +41,7 @@ if($_GET['in']==1){
 						<tr>
 							<td>ประเภทยา : <span class="f_req"></span></td>
 							<td>
-								<input type="text" name="derung" id="" value="" class="form-control">
+								<input type="text" name="derung" id="" value="" class="form-control" required="">
 								<input type="hidden" name="insert" id="" value="1" class="form-control">
 							</td>
 						</tr>
