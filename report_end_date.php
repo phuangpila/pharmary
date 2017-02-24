@@ -1,7 +1,7 @@
 <?php 
 include('include/comtop.php');
 include('include/db.php');
-			
+		
 			$chkdel = $_POST["chkdel"];
 			for ($i=0; $i <count($chkdel); $i++) { 
 			$sql="DELETE FROM tb_product WHERE pro_id= ".$chkdel[$i]." "; 
