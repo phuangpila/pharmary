@@ -20,7 +20,6 @@ $ran=rand(10,10000);
 "sale_id"=>$run_id.$pro.$ran,
 "sale_unit"=>$u1,
 "sale_price"=>$p1,
-"sale_date"=>date("Y-m-d"),
 );
 insert("tb_sale",$data);
 	}
@@ -46,6 +45,7 @@ $('#example').dataTable( {
 } );
 } );
 </script>
+
 </head>
 <body>
 <div class="row-fuild">
@@ -53,7 +53,7 @@ $('#example').dataTable( {
 		<div class="col-md-12">
 
             <div class="panel panel-primary" >
-                <div class="panel-heading" >การสั่งซื้อ</div>
+                <div class="panel-heading" >การขาย</div>
                   	<div class="panel-body">
    <form action="insert_sale.php" method="post" name="form1">         
 	<table cellpadding="0" cellspacing="0" border="0"   id="example">
@@ -69,34 +69,31 @@ $('#example').dataTable( {
   </thead>
   <tbody>
   <?php
-$sql="SELECT * FROM tb_product ";
+$sql="SELECT * FROM tb_product WHERE date_expiretion<CURDATE()";
 $q=mysql_query($sql);
 while ($rec=mysql_fetch_array($q)) {
-	 $y=substr($rec['date_expiretion'],0,4);
-	 $m=substr($rec['date_expiretion'],5,2);
-	$d=substr($rec['date_expiretion'],8,2);
-	$gy=date("Y");
-	$gm=date("m");
-	$gd=date("d");
-		if(intval($y)<=intval($gy)){
-			if(intval($m)<=intval($gm)){
-				if(intval($d)<=intval($gd)){
+
   ?>
   <tr >
-    <td align="center"><input type="checkbox" name="chk[]" value="<?php echo $rec['pro_id']; ?>"  />
-<input type="hidden" name="add" value="1">
+    <td align="center">
+    	<input type="checkbox" name="chk[]" value="<?php echo $rec['pro_id']; ?>"  />
+		<input type="hidden" name="add" value="1">
     </td>
-    <td align="center"><?php echo $rec['pro_name']; ?></td>
-    <td align="center"><?php echo $rec['pro_price']; ?>
-    <input type="hidden" name="price[]" value="<?php echo $rec['pro_price']; ?>">
+    <td align="center">
+    	<?php echo $rec['pro_name']; ?>
     </td>
-    <td align="center"><?php echo $rec['pro_unit']; ?></td>
-    <td align="center" ><input type="number" name="unit[]" min="0" max="<?php echo $rec['pro_unit']; ?>" size="2"></td>
+    <td align="center">
+    	<?php echo $rec['pro_price']; ?>
+    	<input type="hidden" name="price[]" value="<?php echo $rec['pro_price']; ?>">
+    </td>
+    <td align="center">
+    	<?php echo $rec['pro_unit']; ?>
+    </td>
+    <td align="center" >
+    	<input type="number" name="unit[]" min="0" value="0" max="<?php echo $rec['pro_unit']; ?>" size="2">
+    </td>
   </tr>
-  <?php
-			}
-		}
-  	}
+<?php
   }
   ?>
   </tbody>
@@ -104,8 +101,8 @@ while ($rec=mysql_fetch_array($q)) {
 	<tr >
     <td align="center"></td>
     <td align="center"></td>
+    <td align="center"><div id="show_p"></div></td>
     <td align="center"></td>
-    <td align="center">20</td>
     <td align="center"></td>
   </tr>
 </tfoot>

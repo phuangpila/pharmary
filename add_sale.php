@@ -57,12 +57,11 @@ $('#example').dataTable( {
 								<tr>
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['sale_id']; ?></td>
-									<td><?php echo $res['sale_date']; ?></td>
-									<td><?php echo $res['sale_date']; ?></td>
+									<td><?php echo $res['time_reg']; ?></td>
+									<td><?php echo $res['time_reg']; ?></td>
 									<td>
 									<button class="btn btn-info" onclick="popup('../pharmary/sale_show_detail.php ?>','mywindow','800','400');">รายละเอียด
 										</button>
-										<button class="btn btn-warning" onclick="popup('../pharmary/insert_derug.php?up=1&idup=<?php echo $res['pro_id']; ?>','mywindow','800','400');">แก้ไข</button>
 										<button class="btn btn-danger" onclick="confirmDelete('insert_derug.php?del=<?php echo $res['pro_id']; ?>')">ลบ
 										</button>
 										
