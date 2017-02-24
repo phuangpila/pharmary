@@ -4,6 +4,14 @@ error_reporting(0);
 	include('include/comtop.php');
 	include('include/db.php');
 
+	//$chkdel = $_POST["chkdel"];
+
+	/*for ($i=0; $i <count($chkdel); $i++) { 
+		
+		$sql="DELETE FROM tb_student WHERE Id_student = ".$chkdel[$i]." ";
+		mysql_query($sql);
+	}*/
+	//<input type="checkbox" name="chkdel[]" value="$rs["Id_student"];"  />
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,47 +47,22 @@ $('#example').dataTable( {
   
   <tr  align="center" bgcolor="#FFFF33">
     <td ><b>ลำดับ</b></td>
-    <td><b>ผู้ใช้งาน</b></td>
-    <td><b>รหัสผ่าน</b></td>
-    <td ><b>ชื่อ-สกุล</b></td>
-    <td ><b>เบอร์โทร</b></td>
-    <td ><b>รูปภาพ</b></td>
-    <td ><b>สถานะ</b></td>
-    <td><b>แก้ไข</b></td>
-    <td><b>ลบ</b></td>
+    <td><b>ชื่อยา</b></td>
+    <td><b>ราคา</b></td>
+    <td ><b>จำนวน</b></td>
+   
   </tr>
   </thead>
   <tbody>
   <tr >
     <td align="center"><input type="checkbox" name="m"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
     <td align="center">mmm</td>
     <td align="center">ออออ</td>
     <td align="center">รรรรร</td>
-    <td align="center"></td>
   </tr>
-  <tr >
-    <td align="center"><input type="checkbox" name="n"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td align="center">nnn</td>
-    <td align="center">นนนน</td>
-    <td align="center">มมมมม</td>
-    <td align="center"></td>
-  </tr>
-</tbody>
+  
 <tfoot>
 	<tr >
-    <td align="center"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
     <td align="center"></td>
     <td align="center"></td>
     <td align="center"></td>
