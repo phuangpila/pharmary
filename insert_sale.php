@@ -69,7 +69,7 @@ $('#example').dataTable( {
   </thead>
   <tbody>
   <?php
-$sql="SELECT * FROM tb_product WHERE date_expiretion<CURDATE()";
+$sql="SELECT * FROM tb_product WHERE date_expiretion>CURDATE()";
 $q=mysql_query($sql);
 while ($rec=mysql_fetch_array($q)) {
 

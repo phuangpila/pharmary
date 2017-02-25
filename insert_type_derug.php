@@ -32,60 +32,81 @@ echo "<script type='text/javascript'>window.opener.location.reload('add_type_der
 <?php 
 if($_GET['in']==1){
 ?>
-<form action="insert_type_derug.php" method="post" name="form1">
-		<div class="row">
-			<div>			
-				<h3>&nbsp;&nbsp;&nbsp;เพิ่มประเภทข้อมูลยา</h3>
-					<hr>		
-				<table align="center">
-						<tr>
-							<td>ประเภทยา : <span class="f_req"></span></td>
-							<td>
-								<input type="text" name="derung" id="" value="" class="form-control" required="">
-								<input type="hidden" name="insert" id="" value="1" class="form-control">
-							</td>
-						</tr>
-				</table>					
-			</div><br>
-			<div align="center">
-				<div>
-					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
-					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
-				</div>
-			</div>
+<div class="row-fuild">
+		<hr>
+		<div class="col-md-12">
+
+            <div class="panel panel-primary" >
+                <div class="panel-heading" >เพิ่มประเภทข้อมูลยา</div>
+                  	<div class="panel-body">
+                  		<div>
+							<form action="insert_type_derug.php" method="post" name="form1">
+								<div class="row">
+									<div>				
+										<table align="center">
+												<tr>
+													<td>ประเภทยา : <span class="f_req"></span></td>
+													<td>
+														<input type="text" name="derung" id="" value="" class="form-control" required="">
+														<input type="hidden" name="insert" id="" value="1" class="form-control">
+													</td>
+												</tr>
+										</table>					
+									</div><br>
+									<div align="center">
+										<div>
+											<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
+											<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
+										</div>
+									</div>
+								</div>
+							</form>        
+                  		</div>
+           		 	</div>
+        	</div>
 		</div>
-		</form>
+
 		<?php }else if($_GET['up']==1){
 ?>
-<form action="insert_type_derug.php" method="post" name="form1">
-		<div class="row">
-			<div>			
-				<h3>&nbsp;&nbsp;&nbsp;แก้ไขประเภทข้อมูลยา</h3>
-					<hr>		
-				<table align="center">
-				<?php
-				$sql="SELECT * FROM tb_typepro WHERE type_id='".$_GET['idup']."' ";
-				$query=mysql_query($sql);
-				$res=mysql_fetch_array($query);
-				?>
-						<tr>
-							<td>ประเภทยา : <span class="f_req"></span></td>
-							<td>
-								<input type="text" name="derung" id="" value="<?php echo $res['type_name']; ?>" class="form-control">
-								<input type="hidden" name="update" id="" value="1" class="form-control">
-								<input type="hidden" name="id" id="" value="<?php echo $_GET['idup']; ?>" class="form-control">
-							</td>
-						</tr>
-				</table>					
-			</div><br>
-			<div align="center">
-				<div>
-					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
-					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
-				</div>
-			</div>
+		<hr>
+		<div class="col-md-12">
+
+            <div class="panel panel-primary" >
+                <div class="panel-heading" >แก้ไขประเภทข้อมูลยา</div>
+                  	<div class="panel-body">
+                  		<div>
+							<form action="insert_type_derug.php" method="post" name="form1">
+								<div class="row">
+									<div>				
+										<table align="center">
+										<?php
+										$sql="SELECT * FROM tb_typepro WHERE type_id='".$_GET['idup']."' ";
+										$query=mysql_query($sql);
+										$res=mysql_fetch_array($query);
+										?>
+												<tr>
+													<td>ประเภทยา : <span class="f_req"></span></td>
+													<td>
+														<input type="text" name="derung" id="" value="<?php echo $res['type_name']; ?>" class="form-control">
+														<input type="hidden" name="update" id="" value="1" class="form-control">
+														<input type="hidden" name="id" id="" value="<?php echo $_GET['idup']; ?>" class="form-control">
+													</td>
+												</tr>
+										</table>					
+									</div><br>
+									<div align="center">
+										<div>
+											<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
+											<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
+										</div>
+									</div>
+								</div>
+							</form>       
+                  		</div>
+           		 	</div>
+        	</div>
 		</div>
-		</form>
+
 		<?php } ?>
 </body>
 </html>
