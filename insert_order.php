@@ -27,6 +27,7 @@ $data = array(
 insert("tb_order_detail",$data);
     }
   }
+  echo "<script type='text/javascript'>window.opener.location.reload('add_order.php');window.close();</script>";
 }
 
 ?>

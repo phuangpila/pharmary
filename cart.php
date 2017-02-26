@@ -40,6 +40,11 @@ if (isset($_SESSION['cart']) and $itemCount > 0)
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
+        <script>
+function submit()
+{
+    form.submit();
+} </script>
     </head>
     <body>
         <div class="container">
@@ -101,7 +106,7 @@ if (isset($_SESSION['cart']) and $itemCount > 0)
                                     <td><?php echo $meResult['pro_name']; ?></td>
                                     <td><?php echo $meResult['pro_description']; ?></td>
                                     <td>
-                                        <input type="text" name="qty[<?php echo $num; ?>]" value="<?php echo $_SESSION['qty'][$key]; ?>" class="form-control" style="width: 60px;text-align: center;">
+                                        <input type="text" onkeyup="submit();" name="qty[<?php echo $num; ?>]" value="<?php echo $_SESSION['qty'][$key]; ?>" class="form-control" style="width: 60px;text-align: center;">
                                         <input type="hidden" name="arr_key_<?php echo $num; ?>" value="<?php echo $key; ?>">
                                     </td>
                                     <td><?php echo number_format($meResult['pro_price'],2); ?></td>
@@ -123,8 +128,8 @@ if (isset($_SESSION['cart']) and $itemCount > 0)
                             </tr>
                             <tr>
                                 <td colspan="8" style="text-align: right;">
-                                    <button type="submit" class="btn btn-info btn-lg">คำนวณราคาสินค้าใหม่</button>
-                                    <a href="order.php" type="button" class="btn btn-primary btn-lg">สังซื้อสินค้า</a>
+                
+                                    <a href="sale.php" type="button" class="btn btn-primary btn-lg">สังซื้อสินค้า</a>
                                 </td>
                             </tr>
                         </tbody>

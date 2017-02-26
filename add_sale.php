@@ -56,7 +56,7 @@ $('#example').dataTable( {
 	                         ?>
 								<tr>
 									<td><?php echo $i++; ?></td>
-									<td><?php echo $res['sale_id']; ?></td>
+									<td><?php echo $res['id_auto']; ?></td>
 									<td><?php echo $res['time_reg']; ?></td>
 									<td><?php echo $res['time_reg']; ?></td>
 									<td>
