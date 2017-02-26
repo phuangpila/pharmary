@@ -31,7 +31,6 @@
 								<th>ขนาดยา</th>
 								<th>วันผลิต</th>
 								<th>วันหมดอายุ</th>
-								<th>ราคาต้นทุน</th>
 								<th>ราคาที่ขาย</th>
 								<th>บริษัทยา</th>
 								<th>จำนวนยา</th>
@@ -57,7 +56,6 @@
 									<td><?php echo $res['pro_size']; ?></td>
 									<td><?php echo $res['pro_day']; ?></td>
 									<td><?php echo $res['date_expiretion']; ?></td>
-									<td><?php echo $res['pro_cost']; ?></td>
 									<td><?php echo $res['pro_price']; ?></td>
 									<td><?php echo $rs_s['supp_name']; ?></td>
 									<td><?php echo $res['pro_unit']; ?></td>

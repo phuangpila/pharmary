@@ -1,8 +1,9 @@
 <?php 
 include('include/comtop.php');
 include('include/db.php');
-			
+		error_reporting(0);
 			$chkdel = $_POST["chkdel"];
+			//print_r($chkdel);
 			for ($i=0; $i <count($chkdel); $i++) { 
 			$sql="DELETE FROM tb_product WHERE pro_id= ".$chkdel[$i]." "; 
 			mysql_query($sql); 
@@ -26,10 +27,7 @@ include('include/db.php');
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div>
 
-						<?php 
-							
-
-						 ?>
+					<form action="report_end_date.php" method="post">
                   		<table class="table table-striped">                    
 	                    	<thead>
 	                          <tr>
@@ -63,7 +61,7 @@ include('include/db.php');
 									<td style="color:red;"><?php echo $res['pro_name']; ?></td>
 									<td><?php echo $rs_show['type_name']; ?></td>
 									<td><?php echo $res['pro_day']; ?></td>
-									<td><?php echo $res['date_expiretion']; ?></td>
+									<td style="color:red;"><?php echo $res['date_expiretion']; ?></td>
 									<td><?php echo $rs_s['supp_name']; ?></td>
 								</tr>
 	                        </tbody>
@@ -75,14 +73,15 @@ include('include/db.php');
                   	</div>
                   	<div>
                   		<div align="left">  
-                  				<form action="report_end_date.php" method="post">
+                  				
 	                        	<p >&nbsp;&nbsp;&nbsp;<b><input type="checkbox" onclick="for(c in document.getElementsByName('chkdel[]')) document.getElementsByName('chkdel[]').item(c).checked = this.checked" > 
 								<i class="glyphicon glyphicon-arrow-up">เลือกทั้งหมด</i> </b> 
 								<input type="submit" name="btnsave" value="ลบ" class="btn btn-danger">
 								</p>
-	                        </form>
+	                        
 	                        </div>
                   	</div>
+                </form>
             </div>
         </div>
 	</div>

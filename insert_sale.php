@@ -1,6 +1,6 @@
 <?php
-session_start();
 $hide='Y';
+session_start();
 include('include/db.php');
 include('include/comtop.php');
 
@@ -25,6 +25,10 @@ if(isset($_SESSION['qty'])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
+
+        <!-- Bootstrap -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css/nava.css" rel="stylesheet">
 
     </head>
     <body>
@@ -51,8 +55,6 @@ if(isset($_SESSION['qty'])){
                 </div><!--/.container-fluid -->
             </div>
 
-            <!-- Main component for a primary marketing message or call to action -->
-
             <h3>หน้าแรกของสินค้า</h3>
 <?php
 if($action == 'exists'){
@@ -62,15 +64,16 @@ if($action == 'add'){
     echo "<div class=\"alert alert-success\">เพิ่มสินค้าลงในตะกร้าเรียบร้อยแล้ว</div>";
 }
 if($action == 'order'){
-	echo "<div class=\"alert alert-success\">สั่งซื้อสินค้าเรียบร้อยแล้ว</div>";
+    echo "<div class=\"alert alert-success\">สั่งซื้อสินค้าเรียบร้อยแล้ว</div>";
 }
 if($action == 'orderfail'){
-	echo "<div class=\"alert alert-warning\">สั่งซื้อสินค้าไม่สำเร็จ มีข้อผิดพลาดเกิดขึ้นกรุณาลองใหม่อีกครั้ง</div>";
+    echo "<div class=\"alert alert-warning\">สั่งซื้อสินค้าไม่สำเร็จ มีข้อผิดพลาดเกิดขึ้นกรุณาลองใหม่อีกครั้ง</div>";
 }
 ?>
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th>รหัสสินค้า</th>
                         <th>ชื่อสินค้า</th>
                         <th>รายละเอียด</th>
                         <th>ราคา</th>
@@ -83,7 +86,7 @@ if($action == 'orderfail'){
                     {
                         ?>
                         <tr>
-                           
+                            <td><?php echo $meResult['pro_id']; ?></td>
                             <td><?php echo $meResult['pro_name']; ?></td>
                             <td><?php echo $meResult['pro_description']; ?></td>
                             <td><?php echo number_format($meResult['pro_price'],2); ?></td>
@@ -101,6 +104,8 @@ if($action == 'orderfail'){
 
         </div> <!-- /container -->
 
-  
     </body>
 </html>
+<?php
+mysql_close();
+?>

@@ -1,4 +1,5 @@
 <?php 
+$hide='Y';
 include('include/comtop.php');
 include('include/db.php');
 error_reporting(0);
@@ -55,100 +56,118 @@ echo "<script type='text/javascript'>window.opener.location.reload('store.php');
 <?php 
 if($_GET['in']==1){
 ?>
-<form action="insert_store.php" method="post" name="form1">
-		<div class="row">
-			<div>			
-				<h3>&nbsp;&nbsp;&nbsp; เพิ่มข้อมูลร้าน</h3>
-					<hr>		
-				<table align="center">
-						<tr>
-							<td>ชื่อร้านค้า  <input type="text" name="store_name" id="store_name" value="" class="form-control" required=""></td>
-							 <input type="hidden" name="insert" id="" value="0" class="form-control">
-							</td>
-							<td>&nbsp;&nbsp;</td>
-							<td>รหัสที่จดทะเบียน <input type="text" name="store_code" id="store_code" value="" class="form-control" required=""></td>
-						</tr>
-						<tr>
-							<td>แฟกซ์ <input type="text" name="store_fax" id="store_fax" value="" class="form-control" placeholder="xx-xxx-xxxx" OnKeyPress="return chkNumber(this)"></td>
-							<td>&nbsp;&nbsp;</td>
-							<td>อีเมล์ <input type="text" name="store_email" id="store_email" value="" class="form-control"></td>
-						</tr>
-						<tr>
-							<td>&nbsp;&nbsp;</td>
-							<td>&nbsp;&nbsp;</td>
-						</tr>
-						<tr>
-							<td>เบอร์โทร <input type="text" name="store_tel" id="store_tel" value="" class="form-control" placeholder="xx-xxxx-xxxx" OnKeyPress="return chkNumber(this)"></td>
-						</tr>
-						<tr>
-							<td>&nbsp;&nbsp;</td>
-							<td>&nbsp;&nbsp;</td>
-						</tr>
-						<tr>
-						<td colspan="4">ที่อยู่ <textarea name="store_add" id="store_add" cols="30" rows="10" class="form-control"></textarea></td><br>
-						</tr>
+<hr>
+		<div class="col-md-12">
 
-				</table>	
-			</div><br>
-			<div align="center">
-				<div>
-					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
-					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
-				</div>
-			</div>
+            <div class="panel panel-primary" >
+                <div class="panel-heading" >เพิ่มข้อมูลร้าน</div>
+                  	<div class="panel-body">
+                  		<div>													
+							<form action="insert_store.php" method="post" name="form1">
+									<div class="row">
+										<div>				
+											<table align="center">
+													<tr>
+														<td>ชื่อร้านค้า  <input type="text" name="store_name" id="store_name" value="" class="form-control" required=""></td>
+														 <input type="hidden" name="insert" id="" value="0" class="form-control">
+														</td>
+														<td>&nbsp;&nbsp;</td>
+														<td>รหัสที่จดทะเบียน <input type="text" name="store_code" id="store_code" value="" class="form-control" required=""></td>
+													</tr>
+													<tr>
+														<td>แฟกซ์ <input type="text" name="store_fax" id="store_fax" value="" class="form-control" placeholder="xx-xxx-xxxx" OnKeyPress="return chkNumber(this)"></td>
+														<td>&nbsp;&nbsp;</td>
+														<td>อีเมล์ <input type="text" name="store_email" id="store_email" value="" class="form-control"></td>
+													</tr>
+													<tr>
+														<td>&nbsp;&nbsp;</td>
+														<td>&nbsp;&nbsp;</td>
+													</tr>
+													<tr>
+														<td>เบอร์โทร <input type="text" name="store_tel" id="store_tel" value="" class="form-control" placeholder="xx-xxxx-xxxx" OnKeyPress="return chkNumber(this)"></td>
+													</tr>
+													<tr>
+														<td>&nbsp;&nbsp;</td>
+														<td>&nbsp;&nbsp;</td>
+													</tr>
+													<tr>
+													<td colspan="4">ที่อยู่ <textarea name="store_add" id="store_add" cols="30" rows="10" class="form-control"></textarea></td><br>
+													</tr>
+
+											</table>	
+										</div><br>
+										<div align="center">
+											<div>
+												<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
+												<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
+											</div>
+										</div>
+									</div>
+								</form>
+                  		</div>
+           		 	</div>
+        	</div>
 		</div>
-	</form>
 	<?php }else if($_GET['up']==1){?>
+<hr>
+		<div class="col-md-12">
 
-<form action="insert_store.php" method="post" name="form1">
-		<div class="row">
-			<div>			
-				<h3>&nbsp;&nbsp;&nbsp; แก้ไขข้อมูลร้าน</h3>
-					<hr>		
-				<table align="center">
-				<?php
-				$sql="SELECT * FROM tb_store WHERE store_id='".$_GET['idup']."' ";
-				$query=mysql_query($sql);
-				$res=mysql_fetch_array($query);
-				?>
-						<tr>
-							<td>ชื่อร้านค้า  <input type="text" name="store_name" id="store_name" value="<?php echo $res['store_name']; ?>" class="form-control"></td>
-							 <input type="hidden" name="update" id="" value="1" class="form-control">
-							 <input type="hidden" name="id" id="" value="<?php echo $_GET['idup']; ?>" class="form-control">
-							</td>
-							<td>&nbsp;&nbsp;</td>
-							<td>รหัสที่จดทะเบียน <input type="text" name="store_code" id="store_code" value="<?php echo $res['store_code']; ?>" class="form-control"></td>
-						</tr>
-						<tr>
-							<td>แฟกซ์ <input type="text" name="store_fax" id="store_fax" value="<?php echo $res['store_code']; ?>" class="form-control" OnKeyPress="return chkNumber(this)"></td>
-							<td>&nbsp;&nbsp;</td>
-							<td>อีเมล์ <input type="text" name="store_email" id="store_email" value="<?php echo $res['store_email']; ?>" class="form-control"></td>
-						</tr>
-						<tr>
-							<td>&nbsp;&nbsp;</td>
-							<td>&nbsp;&nbsp;</td>
-						</tr>
-						<tr>
-							<td>เบอร์โทร <input type="text" name="store_tel" id="store_tel" value="<?php echo $res['store_tel']; ?>" class="form-control" OnKeyPress="return chkNumber(this)"></td>
-						</tr>
-						<tr>
-							<td>&nbsp;&nbsp;</td>
-							<td>&nbsp;&nbsp;</td>
-						</tr>
-						<tr>
-						<td colspan="4">ที่อยู่ <textarea name="store_add" id="store_add" cols="30" rows="10" class="form-control"><?php echo $res['store_add']; ?></textarea></td><br>
-						</tr>
+            <div class="panel panel-primary" >
+                <div class="panel-heading" >แก้ไขข้อมูลร้าน</div>
+                  	<div class="panel-body">
+                  		<div>
+							<form action="insert_store.php" method="post" name="form1">
+								<div class="row">
+									<div>				
+										<table align="center">
+										<?php
+										$sql="SELECT * FROM tb_store WHERE store_id='".$_GET['idup']."' ";
+										$query=mysql_query($sql);
+										$res=mysql_fetch_array($query);
+										?>
+												<tr>
+													<td>ชื่อร้านค้า  <input type="text" name="store_name" id="store_name" value="<?php echo $res['store_name']; ?>" class="form-control"></td>
+													 <input type="hidden" name="update" id="" value="1" class="form-control">
+													 <input type="hidden" name="id" id="" value="<?php echo $_GET['idup']; ?>" class="form-control">
+													</td>
+													<td>&nbsp;&nbsp;</td>
+													<td>รหัสที่จดทะเบียน <input type="text" name="store_code" id="store_code" value="<?php echo $res['store_code']; ?>" class="form-control"></td>
+												</tr>
+												<tr>
+													<td>แฟกซ์ <input type="text" name="store_fax" id="store_fax" value="<?php echo $res['store_code']; ?>" class="form-control" OnKeyPress="return chkNumber(this)"></td>
+													<td>&nbsp;&nbsp;</td>
+													<td>อีเมล์ <input type="text" name="store_email" id="store_email" value="<?php echo $res['store_email']; ?>" class="form-control"></td>
+												</tr>
+												<tr>
+													<td>&nbsp;&nbsp;</td>
+													<td>&nbsp;&nbsp;</td>
+												</tr>
+												<tr>
+													<td>เบอร์โทร <input type="text" name="store_tel" id="store_tel" value="<?php echo $res['store_tel']; ?>" class="form-control" OnKeyPress="return chkNumber(this)"></td>
+												</tr>
+												<tr>
+													<td>&nbsp;&nbsp;</td>
+													<td>&nbsp;&nbsp;</td>
+												</tr>
+												<tr>
+												<td colspan="4">ที่อยู่ <textarea name="store_add" id="store_add" cols="30" rows="10" class="form-control"><?php echo $res['store_add']; ?></textarea></td><br>
+												</tr>
 
-				</table>	
-			</div><br>
-			<div align="center">
-				<div>
-					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
-					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
-				</div>
-			</div>
+										</table>	
+									</div><br>
+									<div align="center">
+										<div>
+											<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
+											<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
+										</div>
+									</div>
+								</div>
+							</form>
+                  		</div>
+           		 	</div>
+        	</div>
 		</div>
-	</form>
+
 	<?php } ?>
 </body>
 </html>

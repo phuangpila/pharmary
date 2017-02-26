@@ -41,7 +41,6 @@ include('include/db.php');
 								<td><?php echo $res['type_name']; ?></td>
 								<td><button class="btn btn-warning" onclick="popup('../pharmary/insert_type_derug.php?up=1&idup=<?php echo $res['type_id']; ?>','mywindow','800','400');">แก้ไข</button>
 									<button class="btn btn-danger" onclick="confirmDelete('insert_type_derug.php?del=<?php echo $res['type_id']; ?>')">ลบ</button>
-
 								</td>
 							</tr>
 							<?php $i++; } ?>
