@@ -1,7 +1,11 @@
 <?php
 	include('include/comtop.php');
 	include('include/db.php');
-
+	error_reporting(0);
+	if($_GET['del']){
+		delete("tb_sale","id_auto = '".$_GET['del']."'");
+		delete("tb_sale_detail","sale_id = '".$_GET['del']."'");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -57,12 +61,12 @@ $('#example').dataTable( {
 								<tr>
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['id_auto']; ?></td>
-									<td><?php echo $res['time_reg']; ?></td>
-									<td><?php echo $res['time_reg']; ?></td>
+									<td><?php echo substr($res['time_reg'],0,10); ?></td>
+									<td><?php echo substr($res['time_reg'],10,9); ?></td>
 									<td>
 									<button class="btn btn-info" onclick="popup('../pharmary/sale_show_detail.php?sale_id=<?php echo $res["id_auto"]?>','mywindow','800','400');">รายละเอียด
 										</button>
-										<button class="btn btn-danger" onclick="confirmDelete('insert_derug.php?del=<?php echo $res['pro_id']; ?>')">ลบ
+										<button class="btn btn-danger" onclick="confirmDelete('add_sale.php?del=<?php echo $res['id_auto']; ?>')">ลบ
 										</button>
 										
 									</td>

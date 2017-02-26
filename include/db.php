@@ -120,6 +120,12 @@ function confirmDelete(delUrl) {
    document.location = delUrl;
   }
 }
+
+  function confirmStatus(stUrl) {
+  if (confirm("คุณต้องยืนยันการรับสินค้าหรือไม่")) {
+   document.location = stUrl;
+  }
+}
 </script>
 <style type="text/css">
     input[type="number"] {

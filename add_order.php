@@ -1,7 +1,19 @@
 <?php
+error_reporting(0);
 	include('include/comtop.php');
 	include('include/db.php');
+	if($_GET['st']){
+		$newdata = array(
 
+"status"=>'1',
+"date_rec"=>date('Y-m-d'),
+);
+update("tb_order",$newdata,"id_auto = '".$_GET['st']."' ");
+	}
+	if($_GET['del']){
+		delete("tb_order","id_auto = '".$_GET['del']."'");
+		delete("tb_order_detail","op_id = '".$_GET['del']."'");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +71,7 @@ $('#example').dataTable( {
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['id_auto']; ?></td>
 									<td>
-										<?php echo $res['time_reg']; ?></td>
+										<?php echo substr($res['time_reg'],0,10); ?></td>
 									<td><?php 
 									if($res['date_rec']=='0000-00-00'){
 									echo "-"; 
@@ -69,9 +81,22 @@ $('#example').dataTable( {
 									?>
 									</td>
 									<td>
+									<?php
+									if($res['status']=='0'){
+									?>
+									<button class="btn btn-danger" onclick="confirmStatus('add_order.php?st=<?php echo $res['id_auto']; ?>')">ยังไม่ได้รับสินค้า
+										</button>
+										<?php
+									}else{
+										?>
+										<button class="btn btn-success" disabled>ได้รับสินค้าแล้ว
+										</button>
+									<?php
+										}
+									?>
 									<button class="btn btn-info" onclick="popup('../pharmary/order_show_detail.php?od_id=<?php echo $res["id_auto"]?>','mywindow','800','400');">รายละเอียด
 										</button>
-										<button class="btn btn-danger" onclick="confirmDelete('insert_derug.php?del=<?php echo $res['pro_id']; ?>')">ลบ
+										<button class="btn btn-danger" onclick="confirmDelete('add_order.php?del=<?php echo $res['id_auto']; ?>')">ลบ
 										</button>
 										
 									</td>
