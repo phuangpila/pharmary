@@ -69,7 +69,7 @@ $('#example').dataTable( {
 									?>
 									</td>
 									<td>
-									<button class="btn btn-info" onclick="popup('../pharmary/sale_show_detail.php ?>','mywindow','800','400');">รายละเอียด
+									<button class="btn btn-info" onclick="popup('../pharmary/order_show_detail.php?od_id=<?php echo $res["id_auto"]?>','mywindow','800','400');">รายละเอียด
 										</button>
 										<button class="btn btn-danger" onclick="confirmDelete('insert_derug.php?del=<?php echo $res['pro_id']; ?>')">ลบ
 										</button>

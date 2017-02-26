@@ -16,7 +16,7 @@ include('include/db.php');
 <div class="container">
 		<div class="row">
 			<div>			
-				<h3>รายละเอียดการขาย</h3>
+				<h3>รายละเอียดการซื้อ</h3>
 					<hr>
 					 <div class="row col-md-8">		
 				<table class="table table-striped hover">
@@ -28,27 +28,19 @@ include('include/db.php');
 						</tr>
 						<?php
 						$sum=0;
-						$sql="SELECT * FROM tb_sale_detail WHERE sale_id='".$_GET['sale_id']."' ";
+						$sql="SELECT * FROM tb_order_detail WHERE op_id='".$_GET['od_id']."' ";
 						$query=mysql_query($sql);
 						while ($res=mysql_fetch_array($query)) {
 
 						?>
 						<tr>
-							<td>
-							<?php 
-							$sql_pro="SELECT * FROM tb_product WHERE pro_id='". $res['pro_id']."' ";
-							$query_pro=mysql_query($sql_pro);
-							$res_pro=mysql_fetch_array($query_pro);
-							echo $res_pro['pro_name'];
-							 ?>
-								
-							</td>
-							<td style="text-align:center"><?php echo $res['sale_unit'] ?></td>
-							<td style="text-align:right" ><?php echo $res['sale_price'] ?></td>
-							<td style="text-align:right"><?php echo $res['sale_price']*$res['sale_unit']; ?></td>
+							<td><?php echo $res['od_name'] ?></td>
+							<td style="text-align:center"><?php echo $res['od_unit'] ?></td>
+							<td style="text-align:right" ><?php echo $res['od_price'] ?></td>
+							<td style="text-align:right"><?php echo $res['od_price']*$res['od_unit']; ?></td>
 						</tr>
 						<?php
-						$sum+=$res['sale_price']*$res['sale_unit'];
+						$sum+=$res['od_price']*$res['od_unit'];
 					}
 						?>
 						<tr>
