@@ -77,11 +77,11 @@ function add(){
                 <div class="panel-heading" >การซื้อ</div>
                   	<div class="panel-body">
                      <form>
-        <input type="button" class="add-row" value="เพิ่มแถว" onclick="add()" >
+        <input type="button" class="add-row btn btn-success" value="เพิ่มแถว" onclick="add()">
         
     </form>
    <form action="insert_order.php" method="post" name="form1">   
-   เลือกบริษัท :<select name="sup">
+   เลือกบริษัท :<select name="sup" >
    <?php
       $sup="SELECT * FROM tb_supplier";
       $q_sup=mysql_query($sup);
@@ -91,7 +91,7 @@ function add(){
      <?php
         }
      ?>
-   </select>      
+   </select><br>  
 	<table class="table table-bordered">
   <thead>
             <tr>
@@ -107,7 +107,7 @@ function add(){
 
         </tbody>
     </table>
-    <button type="button" class="delete-row">ลบแถว</button>
+    <button type="button" class="delete-row btn btn-danger">ลบแถว</button>
 <br>
 <div align="center">
 				<div>

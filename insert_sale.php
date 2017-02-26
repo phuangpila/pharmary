@@ -4,7 +4,7 @@ session_start();
 include('include/db.php');
 include('include/comtop.php');
 
-$meSql = "SELECT * FROM tb_product WHERE date_expiretion<CURDATE() ";
+$meSql = "SELECT * FROM tb_product WHERE date_expiretion>CURDATE() ";
 $meQuery = mysql_query($meSql);
 
 $action = isset($_GET['a']) ? $_GET['a'] : "";
