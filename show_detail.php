@@ -45,7 +45,7 @@ session_start();
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="add_order.php" >
  <i class="fa fa-arrow-circle-down fa-5x"></i>
                       <h4>ข้อมูลการซื้อ</h4>
                       </a>

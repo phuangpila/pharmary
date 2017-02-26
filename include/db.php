@@ -9,7 +9,7 @@
 );
 insert("tb_typepro",$data);*/
 
-function insert($table,$data) {
+function insert($table,$data,$id="") {
 
 $fields=""; $values="";
 
@@ -31,8 +31,9 @@ $i++;
 
 $sql = "INSERT INTO $table ($fields) VALUES ($values)";
 
-if(mysql_query($sql)) { return true; }
-
+if(mysql_query($sql)) { 
+    return true; 
+}
 else { die("SQL Error: ".$sql."".mysql_error()); return false;}
 
 }

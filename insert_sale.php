@@ -1,124 +1,106 @@
-<?php 
+<?php
+session_start();
 $hide='Y';
-error_reporting(0);
-	include('include/comtop.php');
-	include('include/db.php');
+include('include/db.php');
+include('include/comtop.php');
 
-if($_POST['add']=='1'){
-	$chk = $_POST["chk"];
-	$u=$_POST["unit"];
-	$p=$_POST["price"];
-	for ($i=0; $i <count($chk); $i++) { 
-			$pro=$chk[$i];
-			$u1=$u[$i];
-			$p1=$p[$i];
+$meSql = "SELECT * FROM tb_product ";
+$meQuery = mysql_query($meSql);
 
-$run_id='S';
-$ran=rand(10,10000);
-			$data = array(
-"pro_id"=>$pro,
-"sale_id"=>$run_id.$pro.$ran,
-"sale_unit"=>$u1,
-"sale_price"=>$p1,
-);
-insert("tb_sale",$data);
-	}
-	echo "<script type='text/javascript'>window.opener.location.reload('add_sale.php');window.close();</script>";
+$action = isset($_GET['a']) ? $_GET['a'] : "";
+$itemCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+if(isset($_SESSION['qty'])){
+    $meQty = 0;
+    foreach($_SESSION['qty'] as $meItem){
+        $meQty = $meQty + $meItem;
+    }
+}else{
+    $meQty=0;
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	 <script type="text/javascript" charset="utf-8">
-     $(document).ready(function() {
-$('#example').dataTable( {
-                    "oLanguage": {
-                    "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
-                    "sZeroRecords": "ไม่พบข้อมูลที่ค้นหา",
-                    "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
-                    "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
-                    "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
-                    "sSearch": "ค้นหา :"
-            }
-} );
-} );
-</script>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
 
-</head>
-<body>
-<div class="row-fuild">
-		<hr>
-		<div class="col-md-12">
+    </head>
+    <body>
+        <div class="container">
 
-            <div class="panel panel-primary" >
-                <div class="panel-heading" >การขาย</div>
-                  	<div class="panel-body">
-   <form action="insert_sale.php" method="post" name="form1">         
-	<table cellpadding="0" cellspacing="0" border="0"   id="example">
-  <thead>
-  
-  <tr  align="center" bgcolor="#FFFF33">
-    <td ><b>ลำดับ</b></td>
-    <td><b>ชื่อยา</b></td>
-    <td><b>ราคา</b></td>
-    <td ><b>จำนวนที่เหลือ</b></td>
-   <td ><b>จำนวนที่สั่ง</b></td>
-  </tr>
-  </thead>
-  <tbody>
-  <?php
-$sql="SELECT * FROM tb_product WHERE date_expiretion<CURDATE()";
-$q=mysql_query($sql);
-while ($rec=mysql_fetch_array($q)) {
-
-  ?>
-  <tr >
-    <td align="center">
-    	<input type="checkbox" name="chk[]" value="<?php echo $rec['pro_id']; ?>"  />
-		<input type="hidden" name="add" value="1">
-    </td>
-    <td align="center">
-    	<?php echo $rec['pro_name']; ?>
-    </td>
-    <td align="center">
-    	<?php echo $rec['pro_price']; ?>
-    	<input type="hidden" name="price[]" value="<?php echo $rec['pro_price']; ?>">
-    </td>
-    <td align="center">
-    	<?php echo $rec['pro_unit']; ?>
-    </td>
-    <td align="center" >
-    	<input type="number" name="unit[]" min="0" value="0" max="<?php echo $rec['pro_unit']; ?>" size="2">
-    </td>
-  </tr>
-<?php
-  }
-  ?>
-  </tbody>
-<tfoot>
-	<tr >
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"><div id="show_p"></div></td>
-    <td align="center"></td>
-    <td align="center"></td>
-  </tr>
-</tfoot>
-</table>
-<br>
-<div align="center">
-				<div>
-					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
-					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
-				</div>
-			</div>
-</form>
-</div>
+            <!-- Static navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="insert_sale.php">หน้าแรกสินค้า</a></li>
+                            <li><a href="cart.php">ตะกร้าสินค้าของฉัน <span class="badge"><?php echo $meQty; ?></span></a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
             </div>
-        </div>
-	</div>
 
-</body>
+            <!-- Main component for a primary marketing message or call to action -->
+
+            <h3>หน้าแรกของสินค้า</h3>
+<?php
+if($action == 'exists'){
+    echo "<div class=\"alert alert-warning\">เพิ่มจำนวนสินค้าแล้ว</div>";
+}
+if($action == 'add'){
+    echo "<div class=\"alert alert-success\">เพิ่มสินค้าลงในตะกร้าเรียบร้อยแล้ว</div>";
+}
+if($action == 'order'){
+	echo "<div class=\"alert alert-success\">สั่งซื้อสินค้าเรียบร้อยแล้ว</div>";
+}
+if($action == 'orderfail'){
+	echo "<div class=\"alert alert-warning\">สั่งซื้อสินค้าไม่สำเร็จ มีข้อผิดพลาดเกิดขึ้นกรุณาลองใหม่อีกครั้ง</div>";
+}
+?>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ชื่อสินค้า</th>
+                        <th>รายละเอียด</th>
+                        <th>ราคา</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    while ($meResult = mysql_fetch_array($meQuery))
+                    {
+                        ?>
+                        <tr>
+                           
+                            <td><?php echo $meResult['pro_name']; ?></td>
+                            <td><?php echo $meResult['pro_description']; ?></td>
+                            <td><?php echo number_format($meResult['pro_price'],2); ?></td>
+                            <td>
+                                <a class="btn btn-primary btn-lg" href="update_cart.php?itemId=<?php echo $meResult['pro_id']; ?>" role="button">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    หยิบใส่ตะกร้า</a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+        </div> <!-- /container -->
+
+  
+    </body>
 </html>
