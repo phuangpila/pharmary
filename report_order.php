@@ -30,7 +30,7 @@
 							<tr>
 								<input type="hidden" name="search" value="Y">
 								<td>วันที่รับสินค้า :</td>
-								<td><input type="date" name="start_date" id="start_date" value="" class="form-control"></td>
+								<td><input type="date" name="start_date" id="start_date" value="<?php echo $_POST['start_date'] ?>" class="form-control"></td>
 								<td>&nbsp;&nbsp;</td>
 								<td>ถึง :</td>
 								<td><input type="date" name="end_date" id="end_date" value="" class="form-control"></td>
