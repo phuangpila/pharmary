@@ -12,13 +12,14 @@ include('include/db.php');
 	<title>Document</title>
 </head>
 <body>
+<hr>
 <form action="" method="post" name="form1">
-<div class="container">
-		<div class="row">
+<div class="col-md-12">
+            <div class="panel panel-primary" >
+                <div class="panel-heading" >รายละเอียดการซื้อ</div>
+                  	<div class="panel-body">
 			<div>			
-				<h3>รายละเอียดการซื้อ</h3>
-					<hr>
-					 <div class="row col-md-8">		
+					
 				<table class="table table-striped hover">
 						<tr>
 							<th width="40%" style="text-align:center">ชื่อยา</th>
@@ -50,11 +51,15 @@ include('include/db.php');
 							<td style="text-align:right" ><?php echo $sum; ?></td>
 						</tr>
 				</table>
+						
+			</div>
+			</div>					
+			</div>
 				</div>					
 			</div><br>
 			<div align="center">
 				<div>
-					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-success" value="บันทึก" />
+					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-warning" value="พิมพ์" />
 					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
 				</div>
 			</div>
