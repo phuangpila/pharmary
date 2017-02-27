@@ -12,6 +12,14 @@ $strSql = "SELECT * FROM tb_user WHERE user_name='".$user_name."' AND pass_word=
 	$sqlQuery = mysql_query($strSql);
 	$rec = mysql_num_rows($sqlQuery);
 		if ($rec > 0) {
+			$query = mysql_query("SELECT * FROM tb_product WHERE date_expiretion < CURDATE()");
+			while ($res = mysql_fetch_array($query)) {
+				$data = array(
+	
+				"pro_status"=>'1',
+				);
+				update("tb_product",$data,"pro_id = '".$res['pro_id']."' ");
+			}
 			$row = mysql_fetch_array($sqlQuery);
 				$_SESSION["name"] =$row["name"]; 
 				$_SESSION["id"] =$row["id_auto"];

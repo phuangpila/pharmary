@@ -5,8 +5,10 @@ include('include/db.php');
 			$chkdel = $_POST["chkdel"];
 			//print_r($chkdel);
 			for ($i=0; $i <count($chkdel); $i++) { 
-			$sql="DELETE FROM tb_product WHERE pro_id= ".$chkdel[$i]." "; 
-			mysql_query($sql); 
+			$data = array(
+			"pro_status"=>'2',
+				);
+				update("tb_product",$data,"pro_id = '".$chkdel[$i]."' ");
 			}
  ?>
  <!DOCTYPE html>
@@ -42,7 +44,7 @@ include('include/db.php');
 	                        </thead>
 	                        	<?php 
 	                        	$i=1;
-	                        	$sql = "SELECT * FROM tb_product WHERE date_expiretion < CURDATE()";
+	                        	$sql = "SELECT * FROM tb_product WHERE date_expiretion < CURDATE() AND pro_status = '1' ";
 	                        	$query = mysql_query($sql);	                        	
 	                        	while ($res = mysql_fetch_array($query)) {
 

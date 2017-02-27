@@ -101,7 +101,7 @@ session_start();
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="#" >
+                           <a href="report_order.php" >
  <i class="fa fa-clipboard fa-5x"></i>
                       <h4>รายงานการสั่งยา</h4>
                       </a>

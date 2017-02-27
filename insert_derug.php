@@ -35,6 +35,7 @@ echo "<script type='text/javascript'>window.opener.location.reload('derug.php');
 	"supp_id"=>$_POST["supp_id"],
 	"pro_limit"=>$_POST["pro_limit"],
 	"pro_unit"=>$_POST["pro_unit"],
+	"pro_status"=>$_POST["pro_status"],
 );
 update("tb_product",$data,"pro_id = '".$_POST["id"]."' ");
 echo "<script type='text/javascript'>window.opener.location.reload('derug.php');window.close();</script>";
@@ -77,7 +78,9 @@ if($_GET['in']==1){
 								<table align="center">
 										<tr>
 											<td>ชื่อยา  
-											<input type="text" name="pro_name" id="pro_name" value="" class="form-control" required=""><input type="hidden" name="insert" id="" value="0" class="form-control">
+											<input type="text" name="pro_name" id="pro_name" value="" class="form-control" required="">
+											<input type="hidden" name="insert" id="" value="0" class="form-control">
+											<input type="hidden" name="pro_status" id="" value="0" class="form-control">
 											</td>
 											
 											<td>&nbsp;&nbsp;</td>
