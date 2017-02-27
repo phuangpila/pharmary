@@ -26,10 +26,10 @@ if (isset($_SESSION['cart']) and $itemCount > 0) {
 } else {
 	$meCount = 0;
 }
-
-   $meSql = "INSERT INTO tb_sale (status) VALUES ('0') ";
+$sum=0;
+  /* $meSql = "INSERT INTO tb_sale (status) VALUES ('0') ";
     $meQeury = mysql_query($meSql);
-    $sale_id = mysql_insert_id();
+    $sale_id = mysql_insert_id();*/
     while ($meResult = mysql_fetch_array($meQuery)){
         $key = array_search($meResult['pro_id'], $_SESSION['cart']);
         $total_price = $total_price + ($meResult['pro_price'] * $_SESSION['qty'][$key]);
@@ -39,6 +39,7 @@ echo $meResult['pro_name']."pro_name <br>";
 echo $_SESSION['qty'][$key]."pro_qty <br>";
 echo $meResult['pro_price']."pro_price <br>";
 */
+$sum=$meResult['pro_unit']-$_SESSION['qty'][$key];
             $data = array(
 "sale_id"=>$sale_id,
 "pro_id"=>$meResult['pro_id'],
@@ -46,6 +47,12 @@ echo $meResult['pro_price']."pro_price <br>";
 "sale_price"=>$meResult['pro_price'],
 );
 insert("tb_sale_detail",$data);
+
+$data = array(
+
+"pro_unit"=>$sum,
+);
+update("tb_product",$data,"pro_id ='".$meResult['pro_id']."' ");
     }
     unset($_SESSION['cart']);
      unset($_SESSION['qty']);
