@@ -27,9 +27,9 @@ if (isset($_SESSION['cart']) and $itemCount > 0) {
 	$meCount = 0;
 }
 $sum=0;
-  /* $meSql = "INSERT INTO tb_sale (status) VALUES ('0') ";
+   $meSql = "INSERT INTO tb_sale (status) VALUES ('0') ";
     $meQeury = mysql_query($meSql);
-    $sale_id = mysql_insert_id();*/
+    $sale_id = mysql_insert_id();
     while ($meResult = mysql_fetch_array($meQuery)){
         $key = array_search($meResult['pro_id'], $_SESSION['cart']);
         $total_price = $total_price + ($meResult['pro_price'] * $_SESSION['qty'][$key]);

@@ -87,7 +87,8 @@ function submit()
                             <tr>
                                 <th>ชื่อสินค้า</th>
                                 <th>รายละเอียด</th>
-                                <th>จำนวน</th>
+                                <th>จำนวนสินค้า</th>
+                                <th>จำนวนที่สั่ง</th>
                                 <th>ราคาต่อหน่วย</th>
                                 <th>จำนวนเงิน</th>
                                 <th>&nbsp;</th>
@@ -105,8 +106,9 @@ function submit()
                                 <tr>
                                     <td><?php echo $meResult['pro_name']; ?></td>
                                     <td><?php echo $meResult['pro_description']; ?></td>
+                                    <td><?php echo $meResult['pro_unit']; ?></td>
                                     <td>
-                                        <input type="text" onkeyup="submit();" name="qty[<?php echo $num; ?>]" value="<?php echo $_SESSION['qty'][$key]; ?>" class="form-control" style="width: 60px;text-align: center;">
+                                        <input type="number" onclick="submit();" min="1" max="<?php echo $meResult['pro_unit']; ?>" name="qty[<?php echo $num; ?>]" value="<?php echo $_SESSION['qty'][$key]; ?>" class="form-control" style="width: 60px;text-align: center;">
                                         <input type="hidden" name="arr_key_<?php echo $num; ?>" value="<?php echo $key; ?>">
                                     </td>
                                     <td><?php echo number_format($meResult['pro_price'],2); ?></td>
