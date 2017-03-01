@@ -6,7 +6,21 @@ include('include/db.php');
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title></title>
+	 <script type="text/javascript" charset="utf-8">
+     $(document).ready(function() {
+$('#example').dataTable( {
+                    "oLanguage": {
+                    "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                    "sZeroRecords": "ไม่พบข้อมูลที่ค้นหา",
+                    "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                    "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                    "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                    "sSearch": "ค้นหา :"
+            }
+} );
+} );
+</script>
 </head>
 <body>
 	<div class="row-fuild">
@@ -21,7 +35,7 @@ include('include/db.php');
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div>
 <br>
-                  		<table class="table table-striped table-bordered table-hover" >                    
+                  		<table cellpadding="0" cellspacing="0" border="0" id="example">                    
 	                    	<thead>
 	                          <tr>
 	                            <th width="10%">ลำดับที่</th>

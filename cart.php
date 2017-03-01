@@ -63,13 +63,13 @@ function submit()
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li ><a href="insert_sale.php">หน้าแรกสินค้า</a></li>
-                            <li class="active"><a href="cart.php">ตะกร้าสินค้าของฉัน <span class="badge"><?php echo $meQty; ?></span></a></li>
+                            <li ><a href="insert_sale.php">สินค้า</a></li>
+                            <li class="active"><a href="cart.php">สินค้าที่จะขาย <span class="badge"><?php echo $meQty; ?></span></a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->
             </div>
-			<h3>ตะกร้าสินค้าของฉัน</h3>
+			<h3>สินค้าที่จะขาย</h3>
             <?php
             if ($action == 'removed')
             {
@@ -77,7 +77,7 @@ function submit()
             }
             if ($meCount == 0)
             {
-                echo "<div class=\"alert alert-warning\">ไม่มีสินค้าอยู่ในตะกร้า</div>";
+                echo "<div class=\"alert alert-warning\">ไม่มีสินค้า</div>";
             } else
             {
                 ?>
@@ -114,9 +114,7 @@ function submit()
                                     <td><?php echo number_format($meResult['pro_price'],2); ?></td>
                                     <td><?php echo number_format(($meResult['pro_price'] * $_SESSION['qty'][$key]),2); ?></td>
                                     <td>
-                                        <a class="btn btn-danger btn-lg" href="remove_cart.php?itemId=<?php echo $meResult['pro_id']; ?>" role="button">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                            ลบทิ้ง</a>
+                                        <a class="btn btn-danger btn-sm" href="remove_cart.php?itemId=<?php echo $meResult['pro_id']; ?>" role="button">ลบทิ้ง</a>
                                     </td>
                                 </tr>
                                 <?php
@@ -131,7 +129,7 @@ function submit()
                             <tr>
                                 <td colspan="8" style="text-align: right;">
                 
-                                    <a href="sale.php" type="button" class="btn btn-primary btn-lg">สังซื้อสินค้า</a>
+                                    <a href="sale.php" type="button" class="btn btn-primary btn-sm">ขายสินค้า</a>
                                 </td>
                             </tr>
                         </tbody>

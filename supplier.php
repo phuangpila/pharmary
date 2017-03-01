@@ -7,7 +7,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title></title>
+	 <script type="text/javascript" charset="utf-8">
+     $(document).ready(function() {
+$('#example').dataTable( {
+                    "oLanguage": {
+                    "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                    "sZeroRecords": "ไม่พบข้อมูลที่ค้นหา",
+                    "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                    "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                    "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                    "sSearch": "ค้นหา :"
+            }
+} );
+} );
+</script>
 </head>
 
 <body>
@@ -22,8 +36,8 @@
 							<button class="btn btn-success" onclick="popup('../pharmary/insert_supplier.php?in=1','mywindow','800','500');">เพิ่มข้อมูล</button>
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div>
-
-                  		<table class="table table-striped">                    
+<br>
+                  		<table cellpadding="0" cellspacing="0" border="0" id="example">                    
 	                    	<thead>
 	                          <tr>
 	                            <th width="1">ลำดับที่</th>
@@ -35,12 +49,13 @@
 								<th>Ations</th>
 	                          </tr>
 	                        </thead>
+	                        
+	                        <tbody>
 	                        <?php 
 	                        	$i=1;
 	                        	$query_s = mysql_query("SELECT * FROM tb_supplier");
 	                        	while ($res = mysql_fetch_array($query_s)) {
 	                         ?>
-	                        <tbody>
 								<tr>
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['supp_name']; ?></td>
@@ -54,8 +69,9 @@
 									</td>
 									
 								</tr>
+								<?php } ?>
 	                        </tbody>
-	                        <?php } ?>
+	                        
                 		</table>           
                   	</div>
             </div>

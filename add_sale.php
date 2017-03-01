@@ -3,8 +3,22 @@
 	include('include/db.php');
 	error_reporting(0);
 	if($_GET['del']){
-		delete("tb_sale","id_auto = '".$_GET['del']."'");
+$sum=0;
+		$sql_sale=mysql_query("SELECT * FROM tb_sale_detail WHERE sale_id='".$_GET['del']."' ");
+		while ($res=mysql_fetch_array($sql_sale)) {
+		$sql_pro=mysql_query("SELECT * FROM tb_product WHERE pro_id='".$res['pro_id']."' ");
+			while ($res2=mysql_fetch_array($sql_pro)) {
+				$sum=intval($res2['pro_unit'])+intval($res['sale_unit'])."<br>";
+$data = array(
+"pro_unit"=>$sum,
+);
+update("tb_product",$data,"pro_id = '".$res['pro_id']."' ");
+
+			}
+		}
+delete("tb_sale","id_auto = '".$_GET['del']."'");
 		delete("tb_sale_detail","sale_id = '".$_GET['del']."'");
+
 	}
 ?>
 

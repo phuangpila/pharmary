@@ -36,7 +36,13 @@ insert("tb_order_detail",$data);
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	
+	<script language="javascript">
+function CheckNum(){
+    if (event.keyCode < 48 || event.keyCode > 57){
+          event.returnValue = false;
+        }
+  }
+</script>
 <script type="text/javascript">
     $(document).ready(function(){
         var i=0;
@@ -45,7 +51,7 @@ insert("tb_order_detail",$data);
              var name="";
             var unit="";
             var price="";
-            var markup = "<tr><td><input type='checkbox' name='record'></td><td><input typte='text' name='name"+i+"' required='' value="+name+" ></td><td><input typte='text' name='unit"+i+"' value="+unit+"></td><td><input typte='text' name='price"+i+"' value="+price+"></td></tr>";
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td><input typte='text' class='form-control' name='name"+i+"' required='' value="+name+" ></td><td><input typte='text' class='form-control' onKeyPress='CheckNum()' name='unit"+i+"' value="+unit+" ></td><td><input typte='text' class='form-control' onKeyPress='CheckNum()' name='price"+i+"' value="+price+" ></td></tr>";
             $("table tbody").append(markup);
 
         });
@@ -80,8 +86,11 @@ function add(){
         <input type="button" class="add-row btn btn-success" value="เพิ่มแถว" onclick="add()">
         
     </form>
-   <form action="insert_order.php" method="post" name="form1">   
-   เลือกบริษัท :<select name="sup" >
+   <form action="insert_order.php" method="post" name="form1"> 
+   
+   <div class="col-xs-6 col-md-4"> 
+   <div class="form-group">
+   เลือกบริษัท :<select name="sup" class="form-control">
    <?php
       $sup="SELECT * FROM tb_supplier";
       $q_sup=mysql_query($sup);
@@ -91,7 +100,10 @@ function add(){
      <?php
         }
      ?>
-   </select><br>  
+   </select>
+   </div>
+   </div>
+   <br>  
 	<table class="table table-bordered">
   <thead>
             <tr>

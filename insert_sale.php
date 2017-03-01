@@ -29,7 +29,20 @@ if(isset($_SESSION['qty'])){
         <!-- Bootstrap -->
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="bootstrap/css/nava.css" rel="stylesheet">
-
+<script type="text/javascript" charset="utf-8">
+     $(document).ready(function() {
+$('#example').dataTable( {
+                    "oLanguage": {
+                    "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                    "sZeroRecords": "ไม่พบข้อมูลที่ค้นหา",
+                    "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                    "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                    "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                    "sSearch": "ค้นหา :"
+            }
+} );
+} );
+</script>
     </head>
     <body>
         <div class="container">
@@ -48,29 +61,29 @@ if(isset($_SESSION['qty'])){
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="insert_sale.php">หน้าแรกสินค้า</a></li>
-                            <li><a href="cart.php">ตะกร้าสินค้าของฉัน <span class="badge"><?php echo $meQty; ?></span></a></li>
+                            <li class="active"><a href="insert_sale.php">สินค้า</a></li>
+                            <li><a href="cart.php">สินค้าที่จะขาย <span class="badge"><?php echo $meQty; ?></span></a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->
             </div>
 
-            <h3>หน้าแรกของสินค้า</h3>
+            <h3>สินค้า</h3>
 <?php
 if($action == 'exists'){
-    echo "<div class=\"alert alert-warning\">เพิ่มจำนวนสินค้าแล้ว</div>";
+    echo "<div class=\"alert alert-warning\">มีสินค้าชิ้นนี้แล้ว</div>";
 }
 if($action == 'add'){
-    echo "<div class=\"alert alert-success\">เพิ่มสินค้าลงในตะกร้าเรียบร้อยแล้ว</div>";
+    echo "<div class=\"alert alert-success\">เพิ่มสินค้าเรียบร้อยแล้ว</div>";
 }
 if($action == 'order'){
-    echo "<div class=\"alert alert-success\">สั่งซื้อสินค้าเรียบร้อยแล้ว</div>";
+    echo "<div class=\"alert alert-success\">ขายสินค้าเรียบร้อยแล้ว</div>";
 }
 if($action == 'orderfail'){
-    echo "<div class=\"alert alert-warning\">สั่งซื้อสินค้าไม่สำเร็จ มีข้อผิดพลาดเกิดขึ้นกรุณาลองใหม่อีกครั้ง</div>";
+    echo "<div class=\"alert alert-warning\">ขายสินค้าไม่สำเร็จ มีข้อผิดพลาดเกิดขึ้นกรุณาลองใหม่อีกครั้ง</div>";
 }
 ?>
-            <table class="table table-striped">
+            <table cellpadding="0" cellspacing="0" border="0" id="example">
                 <thead>
                     <tr>
                         <th>รหัสสินค้า</th>
@@ -91,9 +104,7 @@ if($action == 'orderfail'){
                             <td><?php echo $meResult['pro_description']; ?></td>
                             <td><?php echo number_format($meResult['pro_price'],2); ?></td>
                             <td>
-                                <a class="btn btn-primary btn-lg" href="update_cart.php?itemId=<?php echo $meResult['pro_id']; ?>" role="button">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                                    หยิบใส่ตะกร้า</a>
+                                <a class="btn btn-primary btn-sm" href="update_cart.php?itemId=<?php echo $meResult['pro_id']; ?>" role="button">เลือก</a>
                             </td>
                         </tr>
                         <?php
