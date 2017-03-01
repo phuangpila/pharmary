@@ -59,7 +59,7 @@ include('include/db.php');
 			</div><br>
 			<div align="center">
 				<div>
-					<input type="submit" name="btnSave" id="btnSave" class="btn btn-small btn-warning" value="พิมพ์" />
+					<a href="print_order.php?od_id=<?php echo $_GET["od_id"]?>" class="btn btn-warning" role="button">พิมพ์</a>
 					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
 				</div>
 			</div>
