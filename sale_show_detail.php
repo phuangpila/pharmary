@@ -65,7 +65,7 @@ include('include/db.php');
 			</div><br>
 			<div align="center">
 				<div>
-					<a href="print_sale.php"><input type="button" name="btnSave" id="btnSave" class="btn btn-small btn-warning" value="พิมพ์" /></a>
+					<a href="print_sale.php?id=<?php echo $_GET['sale_id'] ?>"><input type="button" name="btnSave" id="btnSave" class="btn btn-small btn-warning" value="พิมพ์" /></a>
 					<input type="button" class="btn btn-small btn-danger" value="ปิด" onclick="window.close();">
 				</div>
 			</div>
