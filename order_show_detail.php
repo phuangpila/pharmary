@@ -38,8 +38,8 @@ if($_SESSION["id"]!=""){
 						<tr>
 							<td><?php echo $res['od_name'] ?></td>
 							<td style="text-align:center"><?php echo $res['od_unit'] ?></td>
-							<td style="text-align:right" ><?php echo $res['od_price'] ?></td>
-							<td style="text-align:right"><?php echo $res['od_price']*$res['od_unit']; ?></td>
+							<td style="text-align:right" ><?php echo number_format($res['od_price']); ?></td>
+							<td style="text-align:right"><?php echo number_format($res['od_price']*$res['od_unit']); ?></td>
 						</tr>
 						<?php
 						$sum+=$res['od_price']*$res['od_unit'];
@@ -49,7 +49,7 @@ if($_SESSION["id"]!=""){
 							<td></td>
 							<td style="text-align:center"></td>
 							<td style="text-align:right" ></td>
-							<td style="text-align:right" ><?php echo $sum; ?></td>
+							<td style="text-align:right" ><?php echo number_format($sum); ?></td>
 						</tr>
 				</table>
 						
