@@ -1,6 +1,8 @@
 <?php
 include('include/db.php');
 session_start();
+    error_reporting(0);
+    if($_SESSION["id"]!=""){
 $itemId = isset($_GET['itemId']) ? $_GET['itemId'] : "";
 if ($_POST)
 {
@@ -42,5 +44,9 @@ if($sum<=0){
         $_SESSION['qty'][$key] = 1;
         header('location:insert_sale.php?a=add');
     }
+}
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
 }
 ?>

@@ -2,7 +2,9 @@
 define('FPDF_FONTPATH','include/fpdf/font/');
 require("include/connect.php");
 require('include/fpdf/fpdf.php');
-
+error_reporting(0);
+session_start();
+if($_SESSION["id"]!=""){
 $sql="SELECT * FROM tb_sale_detail WHERE sale_id='".$_GET['id']."'";
 $q=mysql_query($sql);
 
@@ -84,4 +86,8 @@ $pdf->Cell(0,8,'',0,1,'C',0);
  
   
 $pdf->Output();
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
 ?>

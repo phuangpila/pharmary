@@ -1,9 +1,10 @@
 <?php 
 $hide='Y';
 error_reporting(0);
+session_start();
 include('include/comtop.php');
 include('include/db.php');
-
+if($_SESSION["id"]!=""){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,3 +76,9 @@ include('include/db.php');
 
 </body>
 </html>
+<?php
+}else{
+	echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+			echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
+?>

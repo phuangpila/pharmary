@@ -3,6 +3,8 @@ $hide='Y';
 include('include/comtop.php');
 include('include/db.php');
 error_reporting(0);
+session_start();
+if($_SESSION["id"]!=""){
 if($_POST['insert']=='0'){
 	$data = array(
 	"supp_name"=>$_POST["supp_name"],
@@ -156,3 +158,9 @@ if($_GET['in']==1){
 		<?php } ?>
 </body>
 </html>
+<?php
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
+?>

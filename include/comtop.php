@@ -64,7 +64,7 @@ if($hide=='Y'){
                 </div>
               
                 <span class="logout-spn" >
-                  <a href="index.php" style="color:#fff;">ออกจากระบบ</a>  
+                  <a href="logout.php" style="color:#fff;">ออกจากระบบ</a>  
 
                 </span>
             </div>

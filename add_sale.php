@@ -2,6 +2,8 @@
 	include('include/comtop.php');
 	include('include/db.php');
 	error_reporting(0);
+		session_start();
+if($_SESSION["id"]!=""){
 	if($_GET['del']){
 $sum=0;
 		$sql_sale=mysql_query("SELECT * FROM tb_sale_detail WHERE sale_id='".$_GET['del']."' ");
@@ -94,3 +96,9 @@ $('#example').dataTable( {
 	</div>
 </body>
 </html>
+<?php
+}else{
+	echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+			echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
+?>

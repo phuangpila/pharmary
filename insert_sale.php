@@ -1,9 +1,10 @@
 <?php
 $hide='Y';
 session_start();
+error_reporting(0);
 include('include/db.php');
 include('include/comtop.php');
-
+if($_SESSION["id"]!=""){
 $meSql = "SELECT * FROM tb_product WHERE date_expiretion<CURDATE() AND pro_unit > 0 ";
 $meQuery = mysql_query($meSql);
 
@@ -119,4 +120,8 @@ if($action == 'orderfail'){
 </html>
 <?php
 mysql_close();
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
 ?>

@@ -1,9 +1,10 @@
 <?php
 $hide='Y';
 session_start();
+error_reporting(0);
 include('include/db.php');
 include('include/comtop.php');
-
+if($_SESSION["id"]!=""){
 $action = isset($_GET['a']) ? $_GET['a'] : "";
 $itemCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 if (isset($_SESSION['qty']))
@@ -142,3 +143,9 @@ function submit()
         </div> <!-- /container -->
     </body>
 </html>
+<?php
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
+?>

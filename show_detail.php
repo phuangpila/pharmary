@@ -1,8 +1,9 @@
 <?php 
-
+error_reporting(0);
 include('include/db.php');
 
 session_start();
+if($_SESSION["id"]!=""){
  ?>
 <!DOCTYPE html>
 <html>
@@ -163,3 +164,8 @@ session_start();
    
 </body>
 </html>
+<?php
+}else{
+     echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');window.location.href ='index.php';</script>";
+}
+?>

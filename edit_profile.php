@@ -3,6 +3,7 @@ include('include/comtop.php');
 include('include/db.php');
 error_reporting(0);
 session_start();
+if($_SESSION["id"]!=""){
 $sql="SELECT * FROM tb_user WHERE id_auto='".$_SESSION["id"]."' ";
 $query=mysql_query($sql);
 $rec=mysql_fetch_array($query);
@@ -60,3 +61,9 @@ $rec=mysql_fetch_array($query);
 	</div>
 </body>
 </html>
+<?php
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
+?>

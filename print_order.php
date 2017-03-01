@@ -2,7 +2,9 @@
 define('FPDF_FONTPATH','include/fpdf/font/');
 require("include/connect.php");
 require('include/fpdf/fpdf.php');
-
+error_reporting(0);
+session_start();
+if($_SESSION["id"]!=""){
 
 $quer_store = mysql_query("SELECT * FROM tb_store");
 $res_store =  mysql_fetch_array($quer_store);
@@ -117,4 +119,9 @@ $pdf->Cell(35,15,iconv( 'UTF-8','cp874' ,'ราคารวม (บาท)'),1,
 
   
 $pdf->Output();
+
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
 ?>

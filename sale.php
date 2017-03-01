@@ -1,9 +1,10 @@
 <?php
 $hide='Y';
 session_start();
+error_reporting(0);
 include('include/db.php');
 include('include/comtop.php');
-
+if($_SESSION["id"]!=""){
 $action = isset($_GET['a']) ? $_GET['a'] : "";
 $itemCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 if (isset($_SESSION['qty'])) {
@@ -57,4 +58,9 @@ update("tb_product",$data,"pro_id ='".$meResult['pro_id']."' ");
     unset($_SESSION['cart']);
      unset($_SESSION['qty']);
      echo "<script type='text/javascript'>window.opener.location.reload('add_sale.php');window.close();</script>";
+
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
+}
 ?>

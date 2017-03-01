@@ -2,7 +2,7 @@
 include('include/db.php');
 session_start();
 error_reporting(0);
-
+if($_SESSION["id"]!=""){
 $pass_word=stripslashes(htmlspecialchars(trim($_POST['pass_word']), ENT_QUOTES));
 $re_password=$_POST['re_password'];
 $name=$_POST['name'];
@@ -20,5 +20,10 @@ echo "<script type='text/javascript'>alert('แก้ไข Password เรี�
 }else{
 	echo "<script type='text/javascript'>alert('Password ไม่ต้องกัน ลองใหม่อีกครั้ง');</script>";
 			echo "<meta http-equiv='refresh' content='0;url=edit_profile.php' />";	
+}
+
+}else{
+    echo "<script type='text/javascript'>alert('กรุณา Login ก่อน');</script>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php' />";
 }
 ?>
