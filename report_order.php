@@ -12,6 +12,14 @@
 	<title>Document</title>
 
 </head>
+<script>
+function chknull(){
+	document.getElementById('start_date').value="";
+	document.getElementById('end_date').value="";
+}	
+	
+	
+</script>
 
 <body>
 <form action="report_order.php" method="post" name="">
@@ -38,6 +46,7 @@
 						</table>  <br>
 						<div align="center">
 							<input type="submit" name="btnsearch" value="ค้นหา" class="btn btn-success">
+							<input type="button" name="" value="ยกเลิก" class="btn btn-danger" onclick="chknull()">
 						</div>       
                   	</div>
             </div>
@@ -67,7 +76,7 @@
 	                        <?php
 	                        	$i=1; 
 	                        	if ($_POST['search'] == 'Y') {
-	                        		$sql = "SELECT * FROM tb_order WHERE id_auto IS NOT NULL";
+	                        		$sql = "SELECT * FROM tb_order WHERE date_rec !='0000-00-00'";
 	                        	if ($_POST['start_date'] !="" && $_POST['end_date'] !="") {
 	                        		$sql .= " AND date_rec BETWEEN '".$_POST['start_date']."' AND '".$_POST['end_date']."'";
 	                        	}

@@ -12,7 +12,14 @@
 	<title>Document</title>
 
 </head>
-
+<script>
+function chknull(){
+	document.getElementById('start_date').value="";
+	document.getElementById('end_date').value="";
+}	
+	
+	
+</script>
 <body>
 <form action="report_sale.php" method="post" name="">
 	<!-- form_sreach -->
@@ -38,6 +45,7 @@
 						</table>  <br>
 						<div align="center">
 							<input type="submit" name="btnsearch" value="ค้นหา" class="btn btn-success">
+							<input type="button" name="" value="ยกเลิก" class="btn btn-danger" onclick="chknull()">
 						</div>       
                   	</div>
             </div>
@@ -79,10 +87,8 @@
 									<td><?php echo $res['id_auto']; ?></td>
 									<td><?php echo substr($res['time_reg'],0,10); ?></td>
 									<td><?php echo substr($res['time_reg'],10,9); ?></td>
-									<td>
+									<td width="30">
 									<button class="btn btn-info" onclick="popup('../pharmary/sale_show_detail.php?sale_id=<?php echo $res["id_auto"]?>','mywindow','800','400');">รายละเอียด
-										</button>
-										<button class="btn btn-danger" onclick="confirmDelete('add_sale.php?del=<?php echo $res['id_auto']; ?>')">ลบ
 										</button>
 										
 									</td>

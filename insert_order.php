@@ -45,7 +45,7 @@ insert("tb_order_detail",$data);
              var name="";
             var unit="";
             var price="";
-            var markup = "<tr><td><input type='checkbox' name='record'></td><td><input typte='text' name='name"+i+"' value="+name+"></td><td><input typte='text' name='unit"+i+"' value="+unit+"></td><td><input typte='text' name='price"+i+"' value="+price+"></td></tr>";
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td><input typte='text' name='name"+i+"' required='' value="+name+" ></td><td><input typte='text' name='unit"+i+"' value="+unit+"></td><td><input typte='text' name='price"+i+"' value="+price+"></td></tr>";
             $("table tbody").append(markup);
 
         });
@@ -74,7 +74,7 @@ function add(){
 		<div class="col-md-12">
 
             <div class="panel panel-primary" >
-                <div class="panel-heading" >การซื้อ</div>
+                <div class="panel-heading" >การสั่งซื้อยา</div>
                   	<div class="panel-body">
                      <form>
         <input type="button" class="add-row btn btn-success" value="เพิ่มแถว" onclick="add()">

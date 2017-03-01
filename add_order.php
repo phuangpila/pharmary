@@ -49,7 +49,7 @@ $('#example').dataTable( {
                   		<div>
 							<button class="btn btn-success" onclick="popup('../pharmary/insert_order.php','mywindow','800','400');">เพิ่มข้อมูล</button>
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
-						</div>
+						</div><br>
 
                   		<table cellpadding="0" cellspacing="0" border="0" id="example">                    
 	                    	<thead>
