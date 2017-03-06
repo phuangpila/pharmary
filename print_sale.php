@@ -58,8 +58,11 @@ $pdf->Cell(35,10,iconv( 'UTF-8','cp874' ,'จำนวนเงิน'),1,1,'C',
 $i=1;
 $sum=0;
 while ($res=mysql_fetch_array($q)){
+  //$sql = "SELECT * FROM tb_product WHERE pro_id = '".$res['pro_id']."'";
+ $query_pro = mysql_query("SELECT * FROM tb_product WHERE pro_id = '".$res['pro_id']."'");
+  $res_pro = mysql_fetch_array($query_pro);
 $pdf->Cell(15,10,$i,1,0,'C',0);
-$pdf->Cell(90,10,$res['pro_id'],1,0,'L',0);
+$pdf->Cell(90 ,10, iconv( 'UTF-8','cp874' ,$res_pro['pro_name']),1,0,'C' );
 $pdf->Cell(20,10,$res['sale_unit'],1,0,'C',0);
 $pdf->Cell(35,10,$res['sale_price'],1,0,'R',0);
 $pdf->Cell(35,10,$res['sale_price']*$res['sale_unit'],1,1,'R',0);

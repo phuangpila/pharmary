@@ -45,8 +45,8 @@ if($_SESSION["id"]!=""){
 								
 							</td>
 							<td style="text-align:center"><?php echo $res['sale_unit'] ?></td>
-							<td style="text-align:right" ><?php echo $res['sale_price'] ?></td>
-							<td style="text-align:right"><?php echo $res['sale_price']*$res['sale_unit']; ?></td>
+							<td style="text-align:right" ><?php echo number_format($res['sale_price']);?></td>
+							<td style="text-align:right"><?php echo number_format($res['sale_price']*$res['sale_unit']); ?></td>
 						</tr>
 						<?php
 						$sum+=$res['sale_price']*$res['sale_unit'];

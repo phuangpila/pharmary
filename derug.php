@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 <?php
 session_start();
 	include('include/comtop.php');
 	include('include/db.php');
 	
 error_reporting(0);
+=======
+<?php error_reporting(0);
+	include('include/comtop.php');
+	include('include/db.php');
+	session_start();
+
+>>>>>>> origin/master
 if($_SESSION["id"]!=""){
 ?>
 
