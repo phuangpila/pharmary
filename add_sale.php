@@ -77,7 +77,7 @@ $('#example').dataTable( {
 								<tr>
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['id_auto']; ?></td>
-									<td><?php echo substr($res['time_reg'],0,10); ?></td>
+									<td><?php echo DateThai(substr($res['time_reg'],0,10)); ?></td>
 									<td><?php echo substr($res['time_reg'],10,9); ?></td>
 									<td>
 									<button class="btn btn-info" onclick="popup('../pharmary/sale_show_detail.php?sale_id=<?php echo $res["id_auto"]?>','mywindow','800','400');">รายละเอียด

@@ -88,12 +88,12 @@ function chknull(){
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['id_auto']; ?></td>
 									<td>
-										<?php echo $res['time_reg']; ?></td>
+										<?php echo DateThai($res['time_reg']); ?></td>
 									<td><?php 
 									if($res['date_rec']=='0000-00-00'){
 									echo "-"; 
 								}else{
-									echo $res['date_rec'];
+									echo DateThai($res['date_rec']);
 								}
 									?>
 									</td>

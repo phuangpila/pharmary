@@ -64,8 +64,8 @@ if($_SESSION["id"]!=""){
 									<td><?php echo $i++; ?></td>
 									<td style="color:red;"><?php echo $res['pro_name']; ?></td>
 									<td><?php echo $rs_show['type_name']; ?></td>
-									<td><?php echo $res['pro_day']; ?></td>
-									<td style="color:red;"><?php echo $res['date_expiretion']; ?></td>
+									<td><?php echo DateThai($res['pro_day']); ?></td>
+									<td style="color:red;"><?php echo DateThai($res['date_expiretion']); ?></td>
 									<td><?php echo $rs_s['supp_name']; ?></td>
 								</tr>
 	                        </tbody>

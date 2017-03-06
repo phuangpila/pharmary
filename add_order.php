@@ -73,12 +73,12 @@ $('#example').dataTable( {
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $res['id_auto']; ?></td>
 									<td>
-										<?php echo substr($res['time_reg'],0,10); ?></td>
+										<?php echo DateThai(substr($res['time_reg'],0,10)); ?></td>
 									<td><?php 
 									if($res['date_rec']=='0000-00-00'){
 									echo "-"; 
 								}else{
-									echo $res['date_rec'];
+									echo DateThai($res['date_rec']);
 								}
 									?>
 									</td>

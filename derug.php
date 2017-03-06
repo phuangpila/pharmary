@@ -1,7 +1,8 @@
 <?php
+session_start();
 	include('include/comtop.php');
 	include('include/db.php');
-	session_start();
+	
 error_reporting(0);
 if($_SESSION["id"]!=""){
 ?>
@@ -71,8 +72,8 @@ $('#example').dataTable( {
 									<td><?php echo $res['pro_name']; ?></td>
 									<td><?php echo $rs_show['type_name']; ?></td>
 									<td><?php echo $res['pro_size']; ?></td>
-									<td><?php echo $res['pro_day']; ?></td>
-									<td><?php echo $res['date_expiretion']; ?></td>
+									<td><?php echo DateThai($res['pro_day']); ?></td>
+									<td><?php echo DateThai($res['date_expiretion']); ?></td>
 									<td><?php echo $res['pro_price']; ?></td>
 									<td><?php echo $rs_s['supp_name']; ?></td>
 									<td><?php echo $res['pro_unit']; ?></td>
