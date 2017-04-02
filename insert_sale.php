@@ -84,7 +84,7 @@ if($action == 'orderfail'){
     echo "<div class=\"alert alert-warning\">ขายสินค้าไม่สำเร็จ มีข้อผิดพลาดเกิดขึ้นกรุณาลองใหม่อีกครั้ง</div>";
 }
 ?>
-            <table cellpadding="0" cellspacing="0" border="0" id="example">
+            <table class="table table-striped table-bordered table-hover" id="example">
                 <thead>
                     <tr>
                         <th>รหัสสินค้า</th>

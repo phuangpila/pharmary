@@ -53,7 +53,7 @@ $('#example').dataTable( {
 							<a href="show_detail.php" role="button" class="btn btn-danger">กลับหน้าหลัก</a>
 						</div><br>
 
-                  		<table cellpadding="0" cellspacing="0" border="0" id="example">                    
+                  		<table class="table table-striped table-bordered table-hover" id="example">                    
 	                    	<thead>
 	                          <tr>
 	                            <th width="10%">ลำดับที่</th>

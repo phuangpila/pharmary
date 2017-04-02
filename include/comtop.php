@@ -13,11 +13,12 @@
      <!-- GOOGLE FONTS-->
    <link href='include/assets/css/sens.css' rel='stylesheet' type='text/css' />
 
-   <link rel="stylesheet" type="text/css" href="include/dataTable/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="include/dataTable/dataTables.jqueryui.css">
-    <script type="text/javascript" language="javascript" src="include/dataTable/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" language="javascript" src="include/dataTable/jquery.dataTables.js"></script>
-    <script type="text/javascript" language="javascript" src="include/dataTable/dataTables.jqueryui.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="include/dataTables/data_table.css">
+<link rel="stylesheet" type="text/css" href="include/dataTables/data_table2.css"> 
+<script type="text/javascript" language="javascript" src="include/dataTables/data_table_js.js"></script>
+<script type="text/javascript" language="javascript" src="include/dataTables/data_table_js2.js"></script>
+<script type="text/javascript" language="javascript" src="include/dataTables/data_table_js3.js"></script>
 </head>
 
 <style type="text/css">
